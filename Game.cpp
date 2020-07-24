@@ -56,7 +56,21 @@ void Game::update() {
     if (!this->states.empty())
     {
         this->states.top()->update(this->dt);
+
+        if (this->states.top()->getEnd())
+        {
+            this->states.top()->endState();
+            // quit the state
+            delete this->states.top();
+            this->states.pop();
+            std::cout << "quitting state" << std::endl;
+        }
+        
     }
+}
+
+void Game::endApp(){
+    this->renderWindow->close();
 }
 
 void Game::render() {
@@ -88,5 +102,8 @@ void Game::run() {
 }
 
 void Game::initState(){
-    this->states.push(new GameState(this->renderWindow));
+    for (size_t i = 0; i < 10; i++)
+    {
+        this->states.push(new GameState(this->renderWindow));
+    }
 }

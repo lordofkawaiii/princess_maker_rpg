@@ -9,6 +9,8 @@ public:
     GameState(sf::RenderWindow* window);
     ~GameState();
     void update(const float& dt);
+    void updateKeyBinds(const float& dt);
     void render(sf::RenderTarget* target = nullptr);
     void endState();
+    void endApp();
 };
