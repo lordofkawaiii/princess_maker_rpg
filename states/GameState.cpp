@@ -8,14 +8,6 @@ GameState::~GameState(){
 }
 void GameState::update(const float& dt){
     this->updateKeyBinds(dt);
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-    {
-        std::cout << "a is pressed" << std::endl;
-    }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::B))
-    {
-        std::cout << "b is pressed" << std::endl;
-    }
     
 }
 void GameState::render(sf::RenderTarget* target){
@@ -29,25 +21,37 @@ void GameState::updateKeyBinds(const float& dt){
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_LEFT"))))
     {
+        std::cout << this->keybind.at("MOVE_LEFT") << std::endl;
         this->player.move(dt,-1,0);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_DOWN"))))
     {
+        std::cout << this->keybind.at("MOVE_DOWN") << std::endl;
         this->player.move(dt,0,1);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_UP"))))
     {
+        std::cout << this->keybind.at("MOVE_UP") << std::endl;
         this->player.move(dt,0,-1);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_RIGHT"))))
     {
+        std::cout << this->keybind.at("MOVE_RIGHT") << std::endl;
         this->player.move(dt,1,0);
     }
     
 }
 void GameState::initKeyBinds(){
-    this->keybind.emplace("MOVE_LEFT",this->supportedKeys->at("Q"));
-    this->keybind.emplace("MOVE_RIGHT",this->supportedKeys->at("D"));
-    this->keybind.emplace("MOVE_UP",this->supportedKeys->at("Z"));
-    this->keybind.emplace("MOVE_DOWN",this->supportedKeys->at("S"));
+    std::ifstream ifstr("../config/keys_game.ini");
+    if (ifstr.is_open())
+    {
+        std::string key = "";
+        std::string value = "";
+        while (ifstr >> key >> value)
+        {
+            //std::cout << key << " " << value << std::endl;
+            this->keybind[key] = this->supportedKeys->at(value);
+        }
+    }
+    ifstr.close();
 }

@@ -12,10 +12,10 @@ State::~State(){
 
 void State::checkForEnd(){
     // find a condition to end the state
-    /* if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("CLOSE"))))
     {
         this->wantsEnd = true;
-    } */
+    }
     
 }
 
