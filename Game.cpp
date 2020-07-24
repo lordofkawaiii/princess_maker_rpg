@@ -27,7 +27,9 @@ void Game::initWindow() {
 
 Game::Game(){
     this->initWindow();
+    this->initKeys();
     this->initState();
+    
 }
 
 Game::~Game() {
@@ -104,6 +106,15 @@ void Game::run() {
 void Game::initState(){
     for (size_t i = 0; i < 10; i++)
     {
-        this->states.push(new GameState(this->renderWindow));
+        this->states.push(new GameState(this->renderWindow,&this->supportedKeys));
     }
+}
+
+void Game::initKeys(){
+    this->supportedKeys.emplace("Q",sf::Keyboard::Q);
+    this->supportedKeys.emplace("D",sf::Keyboard::D);
+    this->supportedKeys.emplace("Z",sf::Keyboard::Z);
+    this->supportedKeys.emplace("S",sf::Keyboard::S);
+
+    this->supportedKeys.emplace("Escape",sf::Keyboard::Escape);
 }

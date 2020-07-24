@@ -24,8 +24,8 @@ protected:
 public:
     Entity(/* args */);
     ~Entity();
-    virtual void update(const float& dt) = 0;
-    virtual void render(sf::RenderTarget* target) = 0;
+    virtual void update(const float& dt);
+    virtual void render(sf::RenderTarget* target);
     virtual void move(const float& dt,const float x, const float y);
 };
 

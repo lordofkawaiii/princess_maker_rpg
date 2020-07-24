@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lordofkawaiii/Documents/princess_maker/Game.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/Game.cpp.o"
+  "/home/lordofkawaiii/Documents/princess_maker/entities/Entity.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o"
   "/home/lordofkawaiii/Documents/princess_maker/main.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/main.cpp.o"
   "/home/lordofkawaiii/Documents/princess_maker/states/GameState.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/states/GameState.cpp.o"
   "/home/lordofkawaiii/Documents/princess_maker/states/State.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/states/State.cpp.o"

@@ -169,6 +169,33 @@ Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/Game.cpp.s
 .PHONY : Game.cpp.s
 
+entities/Entity.o: entities/Entity.cpp.o
+
+.PHONY : entities/Entity.o
+
+# target to build an object file
+entities/Entity.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o
+.PHONY : entities/Entity.cpp.o
+
+entities/Entity.i: entities/Entity.cpp.i
+
+.PHONY : entities/Entity.i
+
+# target to preprocess a source file
+entities/Entity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.i
+.PHONY : entities/Entity.cpp.i
+
+entities/Entity.s: entities/Entity.cpp.s
+
+.PHONY : entities/Entity.s
+
+# target to generate assembly for a file
+entities/Entity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.s
+.PHONY : entities/Entity.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -262,6 +289,9 @@ help:
 	@echo "... Game.o"
 	@echo "... Game.i"
 	@echo "... Game.s"
+	@echo "... entities/Entity.o"
+	@echo "... entities/Entity.i"
+	@echo "... entities/Entity.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

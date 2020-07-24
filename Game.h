@@ -13,12 +13,15 @@ private:
     sf::Clock dtClock;
     float dt;
 
+    std::map<std::string,int> supportedKeys;
+
     //states to handle menus
     std::stack<State*> states;
 
     //initializer
     void initWindow();
     void initState();
+    void initKeys();
 public:
     Game();
     ~Game();

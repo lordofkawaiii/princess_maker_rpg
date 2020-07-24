@@ -7,6 +7,9 @@ CMakeFiles/princess_maker_rpg.dir/Game.cpp.o
  ../states/State.h
  /home/lordofkawaiii/Documents/princess_maker/Game.cpp
  /home/lordofkawaiii/Documents/princess_maker/Game.h
+CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o
+ /home/lordofkawaiii/Documents/princess_maker/entities/Entity.cpp
+ /home/lordofkawaiii/Documents/princess_maker/entities/Entity.h
 CMakeFiles/princess_maker_rpg.dir/main.cpp.o
  ../entities/Entity.h
  ../states/GameState.h

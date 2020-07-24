@@ -13,6 +13,7 @@ target_sources(princess_maker_rpg
         main.cpp 
         states/State.h states/State.cpp 
         states/GameState.h states/GameState.cpp
+        entities/Entity.h entities/Entity.cpp
       )
 
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
