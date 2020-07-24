@@ -1,19 +1,6 @@
 #pragma once
 
-#include<iostream>
-#include<ctime>
-#include<cstdio>
-#include<fstream>
-#include<sstream>
-#include<vector>
-#include<map>
-#include<stack>
-
-#include<SFML/Graphics.hpp>
-#include<SFML/Network.hpp>
-#include<SFML/System.hpp>
-#include<SFML/Window.hpp>
-#include<SFML/Audio.hpp>
+#include "Entity.h"
 
 class State
 {
