@@ -106,7 +106,9 @@ void Game::run() {
 void Game::initState(){
     //for (size_t i = 0; i < 10; i++)
     //{
-        this->states.push(new GameState(this->renderWindow,&this->supportedKeys));
+    this->states.push(new MainMenuState(this->renderWindow,&this->supportedKeys));
+    // this->states.push(new GameState(this->renderWindow,&this->supportedKeys));
+
     //}
 }
 

@@ -7,8 +7,9 @@ GameState::~GameState(){
 
 }
 void GameState::update(const float& dt){
+    this->updateMousePositions();
     this->updateKeyBinds(dt);
-    
+    this->player.update(dt);
 }
 void GameState::render(sf::RenderTarget* target){
     this->player.render(this->window);

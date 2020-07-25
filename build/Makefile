@@ -223,6 +223,33 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+ressources/Button.o: ressources/Button.cpp.o
+
+.PHONY : ressources/Button.o
+
+# target to build an object file
+ressources/Button.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o
+.PHONY : ressources/Button.cpp.o
+
+ressources/Button.i: ressources/Button.cpp.i
+
+.PHONY : ressources/Button.i
+
+# target to preprocess a source file
+ressources/Button.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.i
+.PHONY : ressources/Button.cpp.i
+
+ressources/Button.s: ressources/Button.cpp.s
+
+.PHONY : ressources/Button.s
+
+# target to generate assembly for a file
+ressources/Button.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.s
+.PHONY : ressources/Button.cpp.s
+
 states/GameState.o: states/GameState.cpp.o
 
 .PHONY : states/GameState.o
@@ -249,6 +276,33 @@ states/GameState.s: states/GameState.cpp.s
 states/GameState.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/states/GameState.cpp.s
 .PHONY : states/GameState.cpp.s
+
+states/MainMenuState.o: states/MainMenuState.cpp.o
+
+.PHONY : states/MainMenuState.o
+
+# target to build an object file
+states/MainMenuState.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o
+.PHONY : states/MainMenuState.cpp.o
+
+states/MainMenuState.i: states/MainMenuState.cpp.i
+
+.PHONY : states/MainMenuState.i
+
+# target to preprocess a source file
+states/MainMenuState.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.i
+.PHONY : states/MainMenuState.cpp.i
+
+states/MainMenuState.s: states/MainMenuState.cpp.s
+
+.PHONY : states/MainMenuState.s
+
+# target to generate assembly for a file
+states/MainMenuState.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.s
+.PHONY : states/MainMenuState.cpp.s
 
 states/State.o: states/State.cpp.o
 
@@ -295,9 +349,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... ressources/Button.o"
+	@echo "... ressources/Button.i"
+	@echo "... ressources/Button.s"
 	@echo "... states/GameState.o"
 	@echo "... states/GameState.i"
 	@echo "... states/GameState.s"
+	@echo "... states/MainMenuState.o"
+	@echo "... states/MainMenuState.i"
+	@echo "... states/MainMenuState.s"
 	@echo "... states/State.o"
 	@echo "... states/State.i"
 	@echo "... states/State.s"

@@ -141,13 +141,41 @@ CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lordofkawaiii/Documents/princess_maker/entities/Entity.cpp -o CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.s
 
+CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o: CMakeFiles/princess_maker_rpg.dir/flags.make
+CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o: ../states/MainMenuState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o -c /home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.cpp
+
+CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.cpp > CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.i
+
+CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.cpp -o CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.s
+
+CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o: CMakeFiles/princess_maker_rpg.dir/flags.make
+CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o: ../ressources/Button.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o -c /home/lordofkawaiii/Documents/princess_maker/ressources/Button.cpp
+
+CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lordofkawaiii/Documents/princess_maker/ressources/Button.cpp > CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.i
+
+CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lordofkawaiii/Documents/princess_maker/ressources/Button.cpp -o CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.s
+
 # Object files for target princess_maker_rpg
 princess_maker_rpg_OBJECTS = \
 "CMakeFiles/princess_maker_rpg.dir/Game.cpp.o" \
 "CMakeFiles/princess_maker_rpg.dir/main.cpp.o" \
 "CMakeFiles/princess_maker_rpg.dir/states/State.cpp.o" \
 "CMakeFiles/princess_maker_rpg.dir/states/GameState.cpp.o" \
-"CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o"
+"CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o" \
+"CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o" \
+"CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o"
 
 # External object files for target princess_maker_rpg
 princess_maker_rpg_EXTERNAL_OBJECTS =
@@ -157,6 +185,8 @@ princess_maker_rpg: CMakeFiles/princess_maker_rpg.dir/main.cpp.o
 princess_maker_rpg: CMakeFiles/princess_maker_rpg.dir/states/State.cpp.o
 princess_maker_rpg: CMakeFiles/princess_maker_rpg.dir/states/GameState.cpp.o
 princess_maker_rpg: CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o
+princess_maker_rpg: CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o
+princess_maker_rpg: CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o
 princess_maker_rpg: CMakeFiles/princess_maker_rpg.dir/build.make
 princess_maker_rpg: /usr/lib/libsfml-graphics.so.2.5.1
 princess_maker_rpg: /usr/lib/libsfml-network.so.2.5.1
@@ -164,7 +194,7 @@ princess_maker_rpg: /usr/lib/libsfml-audio.so.2.5.1
 princess_maker_rpg: /usr/lib/libsfml-window.so.2.5.1
 princess_maker_rpg: /usr/lib/libsfml-system.so.2.5.1
 princess_maker_rpg: CMakeFiles/princess_maker_rpg.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable princess_maker_rpg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable princess_maker_rpg"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/princess_maker_rpg.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

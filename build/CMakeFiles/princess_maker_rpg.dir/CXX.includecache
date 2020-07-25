@@ -34,13 +34,17 @@ SFML/Window.hpp
 SFML/Audio.hpp
 -
 
-/home/lordofkawaiii/Documents/princess_maker/states/GameState.cpp
-GameState.h
-/home/lordofkawaiii/Documents/princess_maker/states/GameState.h
+../ressources/Button.h
 
-/home/lordofkawaiii/Documents/princess_maker/states/GameState.h
+/home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.cpp
+MainMenuState.h
+/home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.h
+
+/home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.h
 State.h
 /home/lordofkawaiii/Documents/princess_maker/states/State.h
+Button.h
+/home/lordofkawaiii/Documents/princess_maker/states/Button.h
 
 /home/lordofkawaiii/Documents/princess_maker/states/State.h
 Entity.h

@@ -1,17 +1,22 @@
 #pragma once
 
 #include "State.h"
-class GameState : public State
+#include "Button.h"
+
+class MainMenuState : public State
 {
 private:
     void initKeyBinds();
+    //functions
+    void initFont();
 protected:
-    Entity player;
+    sf::Font font;
 public:
-    GameState(sf::RenderWindow* window,std::map<std::string,int>* supportedKeys);
-    ~GameState();
+    MainMenuState(sf::RenderWindow* window,std::map<std::string,int>* supportedKeys);
+    ~MainMenuState();
     void update(const float& dt);
     void updateKeyBinds(const float& dt);
     void render(sf::RenderTarget* target = nullptr);
     void endState();
 };
+
