@@ -31,6 +31,7 @@ CMakeFiles/princess_maker_rpg.dir/states/GameState.cpp.o
 CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o
  ../entities/Entity.h
  ../ressources/Button.h
+ /home/lordofkawaiii/Documents/princess_maker/states/GameState.h
  /home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.cpp
  /home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.h
  /home/lordofkawaiii/Documents/princess_maker/states/State.h

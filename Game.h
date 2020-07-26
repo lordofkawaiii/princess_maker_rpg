@@ -8,6 +8,9 @@ private:
     //variables
     sf::RenderWindow* renderWindow;
     sf::Event event;
+    std::vector<sf::VideoMode> vm;
+    sf::ContextSettings contextSettings;
+
 
     //delta time
     sf::Clock dtClock;

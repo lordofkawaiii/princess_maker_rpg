@@ -1,23 +1,30 @@
 #include "State.h"
 
-State::State(sf::RenderWindow* window,std::map<std::string,int>* supportedKeys){
+State::State(sf::RenderWindow* window,std::map<std::string,int>* supportedKeys,std::stack<State*>* states){
     this->window = window;
     this->wantsEnd = false;
     this->supportedKeys = supportedKeys;
+    this->states = states;
 }
 
 State::~State(){
+
+
     
 }
 
-void State::checkForEnd(){
-    // find a condition to end the state
-    // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("CLOSE"))))
-    // {
-    //     this->wantsEnd = true;
-    // }
-    
+void State::endState(){
+    this->wantsEnd = true;
 }
+
+// void State::checkForEnd(){
+//     // find a condition to end the state
+//     // if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("CLOSE"))))
+//     // {
+//     //     this->wantsEnd = true;
+//     // }
+    
+// }
 
 bool State::getEnd(){
     return this->wantsEnd;

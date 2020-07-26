@@ -11,9 +11,7 @@ protected:
     bool wantsEnd;
     std::map<std::string,int>* supportedKeys;
     std::map<std::string,int> keybind;
-
-
-    
+    std::stack<State*>* states;
 
     //info about mouse position
     sf::Vector2i mouseToScreen;
@@ -22,13 +20,12 @@ protected:
     
     
 public:
-    State(sf::RenderWindow* window,std::map<std::string,int>* supportedKeys);
+    State(sf::RenderWindow* window,std::map<std::string,int>* supportedKeys,std::stack<State*>* states);
     ~State();
 
 
     bool getEnd();
-    virtual void endState() = 0;
-    void checkForEnd();
+    void endState();
     virtual void initKeyBinds() = 0;
     virtual void updateMousePositions();
     virtual void updateKeyBinds(const float& dt) = 0;

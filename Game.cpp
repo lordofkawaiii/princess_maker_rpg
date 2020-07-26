@@ -4,23 +4,37 @@
 
 void Game::initWindow() {
     std::ifstream ifs("../config/config.ini");
+
+    this->vm = sf::VideoMode::getFullscreenModes();
     
     std::string title = "none";
-    sf::VideoMode bounds(800,600);
+    sf::VideoMode bounds = sf::VideoMode::getDesktopMode();
     unsigned framerateLimit = 120;
     bool vsync = false;
-    
+    bool fullscreen = false;
+    unsigned antialiasingLvl = 0;
+
     if (ifs.is_open())
     {
         std::getline(ifs,title);
         ifs >> bounds.width >> bounds.height;
         ifs >> framerateLimit;
         ifs >> vsync;
+        ifs >> fullscreen;
+        ifs >> antialiasingLvl;
     }
 
     ifs.close();
 
-    this->renderWindow = new sf::RenderWindow(bounds, title);
+    this->contextSettings.antialiasingLevel = antialiasingLvl;
+    if (fullscreen)
+    {
+        this->renderWindow = new sf::RenderWindow(bounds, title,sf::Style::Fullscreen,this->contextSettings);
+    } else 
+    {
+        this->renderWindow = new sf::RenderWindow(bounds, title,sf::Style::Default,this->contextSettings);
+    }
+    
     this->renderWindow->setFramerateLimit(framerateLimit);
     this->renderWindow->setVerticalSyncEnabled(vsync);
  }
@@ -68,6 +82,8 @@ void Game::update() {
             std::cout << "quitting state" << std::endl;
         }
         
+    } else {
+        this->renderWindow->close();
     }
 }
 
@@ -106,7 +122,7 @@ void Game::run() {
 void Game::initState(){
     //for (size_t i = 0; i < 10; i++)
     //{
-    this->states.push(new MainMenuState(this->renderWindow,&this->supportedKeys));
+    this->states.push(new MainMenuState(this->renderWindow,&this->supportedKeys,&this->states));
     // this->states.push(new GameState(this->renderWindow,&this->supportedKeys));
 
     //}
