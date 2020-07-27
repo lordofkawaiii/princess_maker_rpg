@@ -16,6 +16,8 @@ target_sources(princess_maker_rpg
         entities/Entity.h entities/Entity.cpp
         states/MainMenuState.h states/MainMenuState.cpp
         ressources/Button.h ressources/Button.cpp
+        entities/Player.h entities/Player.cpp
+        entities/components/MovementComponent.h entities/components/MovementComponent.cpp
       )
 
 find_package(SFML 2.5 COMPONENTS system window graphics network audio REQUIRED)
@@ -24,5 +26,6 @@ target_include_directories(princess_maker_rpg
         states
         entities
         ressources
+        entities/components
 )
 target_link_libraries(princess_maker_rpg PRIVATE sfml-system sfml-window sfml-graphics sfml-network sfml-audio)

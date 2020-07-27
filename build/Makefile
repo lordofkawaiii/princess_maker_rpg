@@ -196,6 +196,60 @@ entities/Entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.s
 .PHONY : entities/Entity.cpp.s
 
+entities/Player.o: entities/Player.cpp.o
+
+.PHONY : entities/Player.o
+
+# target to build an object file
+entities/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/Player.cpp.o
+.PHONY : entities/Player.cpp.o
+
+entities/Player.i: entities/Player.cpp.i
+
+.PHONY : entities/Player.i
+
+# target to preprocess a source file
+entities/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/Player.cpp.i
+.PHONY : entities/Player.cpp.i
+
+entities/Player.s: entities/Player.cpp.s
+
+.PHONY : entities/Player.s
+
+# target to generate assembly for a file
+entities/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/Player.cpp.s
+.PHONY : entities/Player.cpp.s
+
+entities/components/MovementComponent.o: entities/components/MovementComponent.cpp.o
+
+.PHONY : entities/components/MovementComponent.o
+
+# target to build an object file
+entities/components/MovementComponent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/components/MovementComponent.cpp.o
+.PHONY : entities/components/MovementComponent.cpp.o
+
+entities/components/MovementComponent.i: entities/components/MovementComponent.cpp.i
+
+.PHONY : entities/components/MovementComponent.i
+
+# target to preprocess a source file
+entities/components/MovementComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/components/MovementComponent.cpp.i
+.PHONY : entities/components/MovementComponent.cpp.i
+
+entities/components/MovementComponent.s: entities/components/MovementComponent.cpp.s
+
+.PHONY : entities/components/MovementComponent.s
+
+# target to generate assembly for a file
+entities/components/MovementComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/princess_maker_rpg.dir/build.make CMakeFiles/princess_maker_rpg.dir/entities/components/MovementComponent.cpp.s
+.PHONY : entities/components/MovementComponent.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -346,6 +400,12 @@ help:
 	@echo "... entities/Entity.o"
 	@echo "... entities/Entity.i"
 	@echo "... entities/Entity.s"
+	@echo "... entities/Player.o"
+	@echo "... entities/Player.i"
+	@echo "... entities/Player.s"
+	@echo "... entities/components/MovementComponent.o"
+	@echo "... entities/components/MovementComponent.i"
+	@echo "... entities/components/MovementComponent.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

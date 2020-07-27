@@ -7,11 +7,11 @@ class State
 private:
 protected:
     sf::RenderWindow* window;
-    std::vector<sf::Texture> textures;
     bool wantsEnd;
     std::map<std::string,int>* supportedKeys;
     std::map<std::string,int> keybind;
     std::stack<State*>* states;
+    std::map<std::string, sf::Texture> textures;
 
     //info about mouse position
     sf::Vector2i mouseToScreen;
@@ -23,7 +23,7 @@ public:
     State(sf::RenderWindow* window,std::map<std::string,int>* supportedKeys,std::stack<State*>* states);
     ~State();
 
-
+    void addTexture(std::string textureName, std::string path);
     bool getEnd();
     void endState();
     virtual void initKeyBinds() = 0;

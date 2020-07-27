@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/princess_maker_rpg.dir/Game.cpp.o"
   "CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o"
+  "CMakeFiles/princess_maker_rpg.dir/entities/Player.cpp.o"
+  "CMakeFiles/princess_maker_rpg.dir/entities/components/MovementComponent.cpp.o"
   "CMakeFiles/princess_maker_rpg.dir/main.cpp.o"
   "CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o"
   "CMakeFiles/princess_maker_rpg.dir/states/GameState.cpp.o"

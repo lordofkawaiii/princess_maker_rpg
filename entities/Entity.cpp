@@ -3,23 +3,54 @@
 
 Entity::Entity(/* args */)
 {
-    this->rect.setSize(sf::Vector2f(50.,50.));
-    this->rect.setFillColor(sf::Color::White);
-    this->mvmspeed = 100.;
+    this->initVariables();
+}
+
+void Entity::initVariables(){
+    this->sprite = NULL;
+    this->texture = NULL;
 }
 
 void Entity::move(const float& dt,const float x, const float y){
-    this->rect.move(x*this->mvmspeed*dt,y*this->mvmspeed*dt);
+    if (this->sprite)
+    {
+        this->movementComponent->move(x,y); // set velocity
+        this->sprite->move(this->movementComponent->getVelocity()*dt);
+    }
+    
 }
 
 void Entity::render(sf::RenderTarget* target){
-    target->draw(this->rect);
+    if (this->sprite)
+    {
+        target->draw(*this->sprite);
+    }
 }
 
 void Entity::update(const float& dt){
     
 }
 
+void Entity::createSprite(){
+    this->sprite = new sf::Sprite(*this->texture);
+}
+
 Entity::~Entity()
 {
+    if (this->sprite)
+    {
+        delete this->sprite;
+    }
+}
+
+void Entity::setPosition(const float x, const float y){
+    if (this->sprite)
+    {
+        this->sprite->setPosition(x,y); 
+    }
+    
+}
+
+void Entity::createMovementComponent(const float maxVelocity){
+    this->movementComponent = new MovementComponent(maxVelocity);
 }

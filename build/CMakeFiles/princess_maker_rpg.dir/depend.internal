@@ -3,6 +3,8 @@
 
 CMakeFiles/princess_maker_rpg.dir/Game.cpp.o
  ../entities/Entity.h
+ ../entities/Player.h
+ ../entities/components/MovementComponent.h
  ../ressources/Button.h
  ../states/GameState.h
  ../states/MainMenuState.h
@@ -10,10 +12,21 @@ CMakeFiles/princess_maker_rpg.dir/Game.cpp.o
  /home/lordofkawaiii/Documents/princess_maker/Game.cpp
  /home/lordofkawaiii/Documents/princess_maker/Game.h
 CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o
+ ../entities/components/MovementComponent.h
  /home/lordofkawaiii/Documents/princess_maker/entities/Entity.cpp
  /home/lordofkawaiii/Documents/princess_maker/entities/Entity.h
+CMakeFiles/princess_maker_rpg.dir/entities/Player.cpp.o
+ ../entities/components/MovementComponent.h
+ /home/lordofkawaiii/Documents/princess_maker/entities/Entity.h
+ /home/lordofkawaiii/Documents/princess_maker/entities/Player.cpp
+ /home/lordofkawaiii/Documents/princess_maker/entities/Player.h
+CMakeFiles/princess_maker_rpg.dir/entities/components/MovementComponent.cpp.o
+ /home/lordofkawaiii/Documents/princess_maker/entities/components/MovementComponent.cpp
+ /home/lordofkawaiii/Documents/princess_maker/entities/components/MovementComponent.h
 CMakeFiles/princess_maker_rpg.dir/main.cpp.o
  ../entities/Entity.h
+ ../entities/Player.h
+ ../entities/components/MovementComponent.h
  ../ressources/Button.h
  ../states/GameState.h
  ../states/MainMenuState.h
@@ -25,11 +38,15 @@ CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o
  /home/lordofkawaiii/Documents/princess_maker/ressources/Button.h
 CMakeFiles/princess_maker_rpg.dir/states/GameState.cpp.o
  ../entities/Entity.h
+ ../entities/Player.h
+ ../entities/components/MovementComponent.h
  /home/lordofkawaiii/Documents/princess_maker/states/GameState.cpp
  /home/lordofkawaiii/Documents/princess_maker/states/GameState.h
  /home/lordofkawaiii/Documents/princess_maker/states/State.h
 CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o
  ../entities/Entity.h
+ ../entities/Player.h
+ ../entities/components/MovementComponent.h
  ../ressources/Button.h
  /home/lordofkawaiii/Documents/princess_maker/states/GameState.h
  /home/lordofkawaiii/Documents/princess_maker/states/MainMenuState.cpp
@@ -37,5 +54,6 @@ CMakeFiles/princess_maker_rpg.dir/states/MainMenuState.cpp.o
  /home/lordofkawaiii/Documents/princess_maker/states/State.h
 CMakeFiles/princess_maker_rpg.dir/states/State.cpp.o
  ../entities/Entity.h
+ ../entities/components/MovementComponent.h
  /home/lordofkawaiii/Documents/princess_maker/states/State.cpp
  /home/lordofkawaiii/Documents/princess_maker/states/State.h

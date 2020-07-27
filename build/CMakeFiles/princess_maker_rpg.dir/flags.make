@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/lordofkawaiii/Documents/princess_maker/states -I/home/lordofkawaiii/Documents/princess_maker/entities -I/home/lordofkawaiii/Documents/princess_maker/ressources
+CXX_INCLUDES = -I/home/lordofkawaiii/Documents/princess_maker/states -I/home/lordofkawaiii/Documents/princess_maker/entities -I/home/lordofkawaiii/Documents/princess_maker/ressources -I/home/lordofkawaiii/Documents/princess_maker/entities/components
 
 CXX_FLAGS = 
 

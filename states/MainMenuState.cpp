@@ -11,7 +11,6 @@ MainMenuState::MainMenuState(sf::RenderWindow* window,std::map<std::string,int>*
     this->addButton(200.f,200.f,100.f,100.f,
     std::string("settings"),&this->font,
     sf::Color(0, 0, 0, 200),sf::Color(100, 100, 100, 200),sf::Color(250, 250, 250, 200));
-    this->setBackground();
     
     this->addButton(200.f,200.f,100.f,100.f,
     std::string("exit"),&this->font,

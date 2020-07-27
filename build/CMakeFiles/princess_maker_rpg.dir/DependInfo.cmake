@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lordofkawaiii/Documents/princess_maker/Game.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/Game.cpp.o"
   "/home/lordofkawaiii/Documents/princess_maker/entities/Entity.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/entities/Entity.cpp.o"
+  "/home/lordofkawaiii/Documents/princess_maker/entities/Player.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/entities/Player.cpp.o"
+  "/home/lordofkawaiii/Documents/princess_maker/entities/components/MovementComponent.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/entities/components/MovementComponent.cpp.o"
   "/home/lordofkawaiii/Documents/princess_maker/main.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/main.cpp.o"
   "/home/lordofkawaiii/Documents/princess_maker/ressources/Button.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/ressources/Button.cpp.o"
   "/home/lordofkawaiii/Documents/princess_maker/states/GameState.cpp" "/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir/states/GameState.cpp.o"
@@ -19,6 +21,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../states"
   "../entities"
   "../ressources"
+  "../entities/components"
   )
 
 # Targets to which this target links.

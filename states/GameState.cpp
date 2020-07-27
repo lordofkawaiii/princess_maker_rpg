@@ -2,40 +2,42 @@
 
 GameState::GameState(sf::RenderWindow* window,std::map<std::string,int>* supportedKeys,std::stack<State*>* states) : State(window,supportedKeys,states) {
     this->initKeyBinds();
+    this->initTextures();
+    this->initPlayer();
 }
 GameState::~GameState(){
-
+    delete this->player;
+}
+void GameState::initPlayer(){
+    this->player = new Player(100.f,100.f,&this->textures["idle_char"]);
 }
 void GameState::update(const float& dt){
     this->updateMousePositions();
     this->updateKeyBinds(dt);
-    this->player.update(dt);
+    this->player->update(dt);
 }
 void GameState::render(sf::RenderTarget* target){
-    this->player.render(this->window);
+    this->player->render(this->window);
+    this->window->draw(this->background);
 }
 void GameState::updateKeyBinds(const float& dt){
     // this->checkForEnd();
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_LEFT"))))
     {
-        std::cout << this->keybind.at("MOVE_LEFT") << std::endl;
-        this->player.move(dt,-1,0);
+        this->player->move(dt,-1,0);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_DOWN"))))
     {
-        std::cout << this->keybind.at("MOVE_DOWN") << std::endl;
-        this->player.move(dt,0,1);
+        this->player->move(dt,0,1);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_UP"))))
     {
-        std::cout << this->keybind.at("MOVE_UP") << std::endl;
-        this->player.move(dt,0,-1);
+        this->player->move(dt,0,-1);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_RIGHT"))))
     {
-        std::cout << this->keybind.at("MOVE_RIGHT") << std::endl;
-        this->player.move(dt,1,0);
+        this->player->move(dt,1,0);
     }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("CLOSE"))))
     {
@@ -56,4 +58,8 @@ void GameState::initKeyBinds(){
         }
     }
     ifstr.close();
+}
+
+void GameState::initTextures(){
+    this->addTexture("idle_char","../ressources/TopDownCharacter/Character/Character_Idle.png");
 }
