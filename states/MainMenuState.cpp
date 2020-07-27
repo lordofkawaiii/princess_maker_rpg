@@ -4,16 +4,24 @@ MainMenuState::MainMenuState(sf::RenderWindow* window,std::map<std::string,int>*
     this->initKeyBinds();
     this->initFont();
     
-    this->addButton(10.f,10.f,100.f,100.f,
-    std::string("new game"),&this->font,
+    this->addButton(10.f,10.f,150.f,100.f,
+    std::string("new game"),&this->font,20,
+    sf::Color(250, 250, 250, 250),sf::Color(175, 175, 175, 250),sf::Color(100, 100, 100, 200),
     sf::Color(0, 0, 0, 200),sf::Color(100, 100, 100, 200),sf::Color(250, 250, 250, 200));
     
-    this->addButton(200.f,200.f,100.f,100.f,
-    std::string("settings"),&this->font,
+    this->addButton(200.f,200.f,150.f,100.f,
+    std::string("settings"),&this->font,20,
+    sf::Color(250, 250, 250, 250),sf::Color(175, 175, 175, 250),sf::Color(100, 100, 100, 200),
+    sf::Color(0, 0, 0, 200),sf::Color(100, 100, 100, 200),sf::Color(250, 250, 250, 200));
+
+    this->addButton(200.f,200.f,150.f,100.f,
+    std::string("editor"),&this->font,20,
+    sf::Color(250, 250, 250, 250),sf::Color(175, 175, 175, 250),sf::Color(100, 100, 100, 200),
     sf::Color(0, 0, 0, 200),sf::Color(100, 100, 100, 200),sf::Color(250, 250, 250, 200));
     
-    this->addButton(200.f,200.f,100.f,100.f,
-    std::string("exit"),&this->font,
+    this->addButton(200.f,200.f,150.f,100.f,
+    std::string("exit"),&this->font,20,
+    sf::Color(250, 250, 250, 250),sf::Color(175, 175, 175, 250),sf::Color(100, 100, 100, 200),
     sf::Color(0, 0, 0, 200),sf::Color(100, 100, 100, 200),sf::Color(250, 250, 250, 200));
     this->setBackground();
 
@@ -105,8 +113,9 @@ void MainMenuState::setBackground()
 }
 
 void MainMenuState::addButton(float x,float y, float width, float height,
-            std::string text,sf::Font* font,
+            std::string text,sf::Font* font, unsigned int charSize,
+            sf::Color idleText, sf::Color hoverText, sf::Color activeText,
             sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor){
-    this->buttons[text] = new Button(x,y,width,height,text,font,idleColor,hoverColor,activeColor);
+    this->buttons[text] = new Button(x,y,width,height,text,font,charSize,idleText,hoverText,activeText,idleColor,hoverColor,activeColor);
     this->button_order.insert(this->button_order.end(),text);
 }

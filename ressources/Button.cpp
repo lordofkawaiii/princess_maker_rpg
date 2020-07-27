@@ -2,7 +2,8 @@
 
 
 Button::Button(float x,float y, float width, float height,
-            std::string text,sf::Font* font,
+            std::string text,sf::Font* font, unsigned characterSize,
+            sf::Color idleText, sf::Color hoverText, sf::Color activeText,
             sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor)
 {
     this->buttonState = IDLE;
@@ -14,15 +15,18 @@ Button::Button(float x,float y, float width, float height,
     this->text.setString(text);
     this->text.setFillColor(sf::Color::White);
     this->text.setOutlineColor(sf::Color::Red);
-    this->text.setCharacterSize(12.);
+    this->text.setCharacterSize(characterSize);
     this->text.setPosition(
         this->rect.getPosition().x + this->rect.getGlobalBounds().width / 2.f - this->text.getGlobalBounds().width / 2.f,
         this->rect.getPosition().y + this->rect.getGlobalBounds().height / 2.f - this->text.getGlobalBounds().height
     );
-    this->text.setFillColor(sf::Color::White);
+    this->text.setFillColor(idleText);
     this->idleColor = idleColor;
     this->hoverColor = hoverColor;
     this->activeColor = activeColor;
+    this->idleText = idleText;
+    this->hoverText = hoverText;
+    this->activeText = activeText;
     this->rect.setFillColor(idleColor);
 }
 
@@ -49,12 +53,15 @@ void Button::update(const sf::Vector2f mousePosition){
     {
     case IDLE:
         this->rect.setFillColor(this->idleColor);
+        this->text.setFillColor(this->idleText);
         break;
     case PRESSED:
         this->rect.setFillColor(this->activeColor);
+        this->text.setFillColor(this->activeText);
         break;
     case HOVER:
         this->rect.setFillColor(this->hoverColor);
+        this->text.setFillColor(this->hoverText);
         break;
     default:
         this->rect.setFillColor(sf::Color::Red);

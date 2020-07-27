@@ -23,7 +23,8 @@ public:
     void updateKeyBinds(const float& dt);
     void render(sf::RenderTarget* target = nullptr);
     void addButton(float x,float y, float width, float height,
-            std::string text,sf::Font* font,
+            std::string text,sf::Font* font, unsigned int charSize,
+            sf::Color idleText, sf::Color hoverText, sf::Color activeText,
             sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor);
     void setBackground();
     void updateButtons();

@@ -20,17 +20,19 @@ private:
 protected:
     float maxvelocity;
     sf::Vector2f velocity;
-    sf::Vector2f acceleration;
-    sf::Vector2f deceleration;
+    float acceleration;
+    float deceleration;
+
+    sf::Sprite* sprite;
 
     //init fonctions
 public:
-    MovementComponent(float maxvelocity);
+    MovementComponent(sf::Sprite& sprite,float maxvelocity,float acceleration, float deceleration);
     ~MovementComponent();
 
     const sf::Vector2f& getVelocity() const;
 
     void update(const float& dt);
-    void move(const float dir_x, const float dir_y);
+    void move(const float& dt,const float dir_x, const float dir_y);
 };
 

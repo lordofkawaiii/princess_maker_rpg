@@ -3,8 +3,7 @@
 Player::Player(float x, float y,sf::Texture* texture)
 {
     this->initVariables();
-    this->texture = texture;
-    this->createSprite();
+    this->createSprite(texture);
     this->setPosition(x,y);
     this->initComponents();
 }
@@ -16,5 +15,5 @@ void Player::initVariables(){
 
 }
 void Player::initComponents(){
-    this->createMovementComponent(100.f);
+    this->createMovementComponent(200.f,5.f,3.f);
 }
