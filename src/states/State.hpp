@@ -28,7 +28,7 @@ public:
   void         endState();
   virtual void initKeyBinds() = 0;
   virtual void updateMousePositions();
-  virtual void updateKeyBinds(const float& dt) = 0;
-  virtual void update(const float& dt) = 0;
+  virtual void updateKeyBinds(float dt) = 0;
+  virtual void update(float dt) = 0;
   virtual void render(sf::RenderTarget* target = nullptr) = 0;
 };

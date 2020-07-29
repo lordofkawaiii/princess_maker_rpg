@@ -16,7 +16,7 @@ void GameState::initPlayer()
 {
   this->player = new Player(100.f, 100.f, &this->textures["idle_char"]);
 }
-void GameState::update(const float& dt)
+void GameState::update(float dt)
 {
   this->updateMousePositions();
   this->updateKeyBinds(dt);
@@ -27,7 +27,7 @@ void GameState::render(sf::RenderTarget* target)
   this->player->render(target);
   this->window->draw(this->background);
 }
-void GameState::updateKeyBinds(const float& dt)
+void GameState::updateKeyBinds(float dt)
 {
   // this->checkForEnd();
 

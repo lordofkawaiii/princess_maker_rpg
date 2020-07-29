@@ -50,7 +50,7 @@ void MainMenuState::updateButtons()
     // target->setSize(width/3.0,height/this->buttons.size());
   }
 }
-void MainMenuState::update(const float& dt)
+void MainMenuState::update(float dt)
 {
   this->updateMousePositions();
   this->updateKeyBinds(dt);
@@ -78,13 +78,12 @@ void MainMenuState::render(sf::RenderTarget* target)
 
   this->window->draw(this->background);
 
-  for (std::map<std::string, Button*>::iterator it = this->buttons.begin();
-       it != this->buttons.end(); ++it)
+  for (auto& [_, button] : buttons)
   {
-    it->second->render(target);
+    button->render(target);
   }
 }
-void MainMenuState::updateKeyBinds(const float& dt)
+void MainMenuState::updateKeyBinds(float dt)
 {
   // this->checkForEnd();
 }

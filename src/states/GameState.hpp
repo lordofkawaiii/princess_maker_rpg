@@ -17,8 +17,8 @@ public:
             std::stack<State*>* states);
   ~GameState();
 
-  void update(const float& dt);
-  void updateKeyBinds(const float& dt);
+  void update(float dt);
+  void updateKeyBinds(float dt);
   void render(sf::RenderTarget* target = nullptr);
   void initTextures();
   void initPlayer();

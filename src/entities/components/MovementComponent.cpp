@@ -11,7 +11,7 @@ MovementComponent::MovementComponent(sf::Sprite& sprite, float maxvelocity,
 
 MovementComponent::~MovementComponent() {}
 
-void MovementComponent::update(const float& dt)
+void MovementComponent::update(float dt)
 {
   // deceleration
   if (this->velocity.x > 0.f) // go to the right
@@ -68,7 +68,7 @@ void MovementComponent::update(const float& dt)
 
   this->sprite->move(this->velocity * dt);
 }
-void MovementComponent::move(const float& dt, const float dir_x, const float dir_y)
+void MovementComponent::move(float dt, const float dir_x, const float dir_y)
 {
   // acceleration
   this->velocity.x += this->acceleration * dir_x * dt;

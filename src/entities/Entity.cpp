@@ -11,7 +11,7 @@ void Entity::initVariables()
   this->sprite = nullptr;
 }
 
-void Entity::move(const float& dt, const float x, const float y)
+void Entity::move(float dt, const float x, const float y)
 {
   if (this->sprite)
   {
@@ -27,7 +27,7 @@ void Entity::render(sf::RenderTarget* target)
   }
 }
 
-void Entity::update(const float& dt)
+void Entity::update(float dt)
 {
   if (this->movementComponent)
   {

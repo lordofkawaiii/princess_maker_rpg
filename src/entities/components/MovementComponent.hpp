@@ -34,6 +34,6 @@ public:
 
   const sf::Vector2f& getVelocity() const;
 
-  void update(const float& dt);
-  void move(const float& dt, const float dir_x, const float dir_y);
+  void update(float dt);
+  void move(float dt, const float dir_x, const float dir_y);
 };

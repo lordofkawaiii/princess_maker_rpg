@@ -22,8 +22,8 @@ public:
   MainMenuState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
                 std::stack<State*>* states);
   ~MainMenuState();
-  void update(const float& dt);
-  void updateKeyBinds(const float& dt);
+  void update(float dt);
+  void updateKeyBinds(float dt);
   void render(sf::RenderTarget* target = nullptr);
   void addButton(float x, float y, float width, float height, std::string text,
                  sf::Font* font, unsigned int charSize, sf::Color idleText,

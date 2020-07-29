@@ -49,7 +49,7 @@ private:
     }
 
     // functions
-    void play(const float& dt)
+    void play(float dt)
     {
       this->timer = 10.f * dt;
       if (this->timer > this->animationTimer)
@@ -81,11 +81,11 @@ public:
   AnimationComponent(sf::Sprite& sprite, sf::Texture& textureSheet);
 
   ~AnimationComponent();
-  void update(const float& dt);
-  void startAnimation(std::string animationName);
-  void resetAnimation(std::string animationName);
-  void endAnimation(std::string animationName);
-  void addAnimation(std::string animationName, float timer, int x, int y, int x2, int y2,
-                    int width, int height);
-  void play(std::string animationName, const float& dt);
+  void update(float dt);
+  void startAnimation(const std::string& animationName);
+  void resetAnimation(const std::string& animationName);
+  void endAnimation(const std::string& animationName);
+  void addAnimation(const std::string& animationName, float timer, int x, int y, int x2,
+                    int y2, int width, int height);
+  void play(const std::string& animationName, float dt);
 };

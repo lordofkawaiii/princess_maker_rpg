@@ -12,9 +12,9 @@ protected:
 public:
   Entity();
   virtual ~Entity();
-  void         update(const float& dt);
+  void         update(float dt);
   virtual void render(sf::RenderTarget* target);
-  virtual void move(const float& dt, const float x, const float y);
+  virtual void move(float dt, const float x, const float y);
   void         createSprite(sf::Texture* texture);
   void         setPosition(const float x, const float y);
   void         createMovementComponent(const float maxVelocity, float acceleration,
