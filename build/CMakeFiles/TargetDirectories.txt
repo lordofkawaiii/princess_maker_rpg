@@ -1,3 +1,0 @@
-/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/rebuild_cache.dir
-/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/edit_cache.dir
-/home/lordofkawaiii/Documents/princess_maker/build/CMakeFiles/princess_maker_rpg.dir
