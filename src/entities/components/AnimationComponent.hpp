@@ -73,9 +73,9 @@ private:
       this->currentRect = this->startRect;
     }
   };
-  std::map<std::string, Animation*> animationSheet;
-  sf::Sprite&                       sprite;
-  sf::Texture&                      texture;
+  std::map<std::string, std::unique_ptr<Animation> > animationSheet;
+  sf::Sprite&                                        sprite;
+  sf::Texture&                                       texture;
 
 public:
   AnimationComponent(sf::Sprite& sprite, sf::Texture& textureSheet);

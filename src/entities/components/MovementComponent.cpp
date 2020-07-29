@@ -9,8 +9,6 @@ MovementComponent::MovementComponent(sf::Sprite& sprite, float maxvelocity,
   this->deceleration = deceleration;
 }
 
-MovementComponent::~MovementComponent() {}
-
 void MovementComponent::update(float dt)
 {
   // deceleration

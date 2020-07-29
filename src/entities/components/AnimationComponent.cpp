@@ -7,20 +7,26 @@ AnimationComponent::AnimationComponent(sf::Sprite& sprite, sf::Texture& textureS
 
 AnimationComponent::~AnimationComponent()
 {
-  for (std::map<std::string, Animation*>::iterator it = this->animationSheet.begin();
-       it != this->animationSheet.end(); ++it)
-    delete it->second;
+  //
 }
 
-void AnimationComponent::startAnimation(const std::string& animationName) {}
-void AnimationComponent::resetAnimation(const std::string& animationName) {}
-void AnimationComponent::endAnimation(const std::string& animationName) {}
+void AnimationComponent::startAnimation(const std::string& animationName)
+{
+  //
+}
+void AnimationComponent::resetAnimation(const std::string& animationName)
+{
+  //
+}
+void AnimationComponent::endAnimation(const std::string& animationName)
+{
+  //
+}
 void AnimationComponent::addAnimation(const std::string& animationName, float timer,
                                       int x, int y, int x2, int y2, int width, int height)
 {
-  Animation* temp =
-    new Animation(this->sprite, this->texture, timer, x, y, x2, y2, width, height);
-  this->animationSheet[animationName] = temp;
+  this->animationSheet[animationName] = std::make_unique<Animation>(
+    this->sprite, this->texture, timer, x, y, x2, y2, width, height);
 }
 void AnimationComponent::play(const std::string& animationName, float dt)
 {

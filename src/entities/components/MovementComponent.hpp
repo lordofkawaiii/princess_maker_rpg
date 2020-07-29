@@ -30,7 +30,7 @@ protected:
 public:
   MovementComponent(sf::Sprite& sprite, float maxvelocity, float acceleration,
                     float deceleration);
-  ~MovementComponent();
+  ~MovementComponent() = default;
 
   const sf::Vector2f& getVelocity() const;
 
