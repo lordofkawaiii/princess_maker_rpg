@@ -21,8 +21,8 @@ private:
   {
   public:
     // variables
-    sf::Texture& texture;
     sf::Sprite&  sprite;
+    sf::Texture& texture;
     float        animationTimer;
     float        timer;
     int          width;
@@ -33,26 +33,24 @@ private:
 
     Animation(sf::Sprite& sprite, sf::Texture& texture, float timer, int x, int y, int x2,
               int y2, int width, int height)
-      : texture(texture), sprite(sprite)
+      : sprite(sprite), texture(texture)
     {
-      std::cout << "i'm here2" << std::endl;
+      this->timer = 0;
       this->width = width;
       this->height = height;
       this->animationTimer = timer;
-      std::cout << "i'm here3" << std::endl;
       this->startRect = sf::IntRect(x * width, y * height, width, height);
+      this->currentRect = this->startRect;
       this->endRect = sf::IntRect(x2 * width, y2 * height, width, height);
       this->sprite.setTexture(this->texture, true);
-      std::cout << "i'm here4" << std::endl;
       this->sprite.setTextureRect(this->startRect);
-      this->currentRect = this->startRect;
     }
 
     // functions
     void play(float dt)
     {
-      this->timer = 10.f * dt;
-      if (this->timer > this->animationTimer)
+      this->timer += 100.f * dt;
+      if (this->timer >= this->animationTimer)
       {
         this->timer = 0.f;
         if (this->currentRect != this->endRect)
@@ -73,9 +71,9 @@ private:
       this->currentRect = this->startRect;
     }
   };
-  std::map<std::string, std::unique_ptr<Animation> > animationSheet;
-  sf::Sprite&                                        sprite;
-  sf::Texture&                                       texture;
+  std::map<std::string, std::unique_ptr<Animation>> animationSheet;
+  sf::Sprite&                                       sprite;
+  sf::Texture&                                      texture;
 
 public:
   AnimationComponent(sf::Sprite& sprite, sf::Texture& textureSheet);

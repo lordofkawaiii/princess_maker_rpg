@@ -15,6 +15,19 @@
 #include <stack>
 #include <vector>
 
+enum direction
+{
+  left,
+  right,
+  up,
+  down,
+  idle,
+  bottom_left,
+  bottom_right,
+  up_left,
+  up_right,
+};
+
 class MovementComponent
 {
 private:
@@ -34,6 +47,9 @@ public:
 
   const sf::Vector2f& getVelocity() const;
 
-  void update(float dt);
-  void move(float dt, const float dir_x, const float dir_y);
+  void        update(float dt);
+  void        move(float dt, const float dir_x, const float dir_y);
+  bool        isIdle();
+  direction   getDir();
+  std::string getDirString(direction dir);
 };

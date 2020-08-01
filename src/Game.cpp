@@ -4,7 +4,7 @@
 
 void Game::initWindow()
 {
-  std::ifstream ifs("../config/config.ini");
+  std::ifstream ifs("config/config.ini");
 
   this->vm = sf::VideoMode::getFullscreenModes();
 
@@ -141,7 +141,7 @@ void Game::initState()
 
 void Game::initKeys()
 {
-  std::ifstream ifstr("../config/keys.ini");
+  std::ifstream ifstr("config/keys.ini");
   if (ifstr.is_open())
   {
     std::string key = "";

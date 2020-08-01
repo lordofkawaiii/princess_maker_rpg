@@ -4,7 +4,7 @@ GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* suppo
                      std::stack<State*>* states)
   : State(window, supportedKeys, states)
 {
-  // this->initKeyBinds();
+  this->initKeyBinds();
   this->initTextures();
   this->initPlayer();
 }
@@ -14,7 +14,7 @@ GameState::~GameState()
 }
 void GameState::initPlayer()
 {
-  this->player = new Player(100.f, 100.f, &this->textures["idle_char"]);
+  this->player = new Player(100.f, 100.f, &this->textures["all_sheet"]);
 }
 void GameState::update(float dt)
 {
@@ -54,7 +54,7 @@ void GameState::updateKeyBinds(float dt)
 }
 void GameState::initKeyBinds()
 {
-  std::ifstream ifstr("../config/keys_game.ini");
+  std::ifstream ifstr("config/keys_game.ini");
   if (ifstr.is_open())
   {
     std::string key = "";
@@ -70,6 +70,5 @@ void GameState::initKeyBinds()
 
 void GameState::initTextures()
 {
-  this->addTexture("idle_char",
-                   "../ressources/TopDownCharacter/Character/Character_Idle.png");
+  this->addTexture("all_sheet", "ressources/TopDownCharacter/Character/all_sheets.png");
 }

@@ -89,7 +89,7 @@ void MainMenuState::updateKeyBinds(float dt)
 }
 void MainMenuState::initKeyBinds()
 {
-  std::ifstream ifstr("../config/keys_game.ini");
+  std::ifstream ifstr("config/keys_game.ini");
   if (ifstr.is_open())
   {
     std::string key = "";
@@ -105,9 +105,9 @@ void MainMenuState::initKeyBinds()
 
 void MainMenuState::initFont()
 {
-  if (!(this->font.loadFromFile("../Fonts/propaganda.ttf")))
+  if (!(this->font.loadFromFile("ressources/Fonts/propaganda.ttf")))
   {
-    throw("could not load font");
+    // throw("could not load font");
   }
 }
 
@@ -115,9 +115,9 @@ void MainMenuState::setBackground()
 {
   this->background.setSize(sf::Vector2f(static_cast<float>(this->window->getSize().x),
                                         static_cast<float>(this->window->getSize().y)));
-  if (!this->bgTexture.loadFromFile("../ressources/images/fascist_flag.png"))
+  if (!this->bgTexture.loadFromFile("ressources/images/fascist_flag.png"))
   {
-    throw "could not load the texture";
+    // throw "could not load the texture";
   }
   this->background.setTexture(&this->bgTexture);
 }

@@ -27,17 +27,12 @@ void Entity::render(sf::RenderTarget* target)
   }
 }
 
-void Entity::update(float dt)
-{
-  if (this->movementComponent)
-  {
-    this->movementComponent->update(dt);
-  }
-}
+void Entity::update(float dt) {}
 
 void Entity::createSprite(sf::Texture* texture)
 {
-  this->sprite = new sf::Sprite(*texture);
+  // this->sprite = new sf::Sprite(*texture);
+  this->sprite = new sf::Sprite();
 }
 
 Entity::~Entity()
@@ -72,8 +67,9 @@ void Entity::createMovementComponent(const float maxVelocity, float acceleration
 
 void Entity::createAnimationComponent(sf::Texture& texture)
 {
-  if (this->sprite)
+  if (!this->sprite)
   {
-    this->animationComponent = new AnimationComponent(*this->sprite, texture);
+    this->createSprite(&texture);
   }
+  this->animationComponent = new AnimationComponent(*this->sprite, texture);
 }
