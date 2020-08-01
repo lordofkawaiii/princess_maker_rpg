@@ -47,8 +47,8 @@ void Player::update(float dt)
   }
   else
   {
-    this->animationComponent->play(
-      this->movementComponent->getDirString(this->movementComponent->getDir()), dt);
     this->dir = this->movementComponent->getDirString(this->movementComponent->getDir());
+    this->animationComponent->resetAnimation(this->dir);
+    this->animationComponent->play(this->dir, dt);
   }
 }

@@ -13,6 +13,7 @@ void MovementComponent::update(float dt)
 {
   if (this->velocity.x > 0.f)
   {
+    this->velocity.x -= this->deceleration;
     if (this->velocity.y != 0.f && this->velocity.x > this->maxvelocity / 2)
     {
       this->velocity.x = this->maxvelocity / 2;
@@ -21,7 +22,6 @@ void MovementComponent::update(float dt)
     {
       this->velocity.x = this->maxvelocity;
     }
-    this->velocity.x -= this->deceleration;
     if (this->velocity.x < 0.f)
     {
       this->velocity.x = 0.f;
@@ -29,6 +29,7 @@ void MovementComponent::update(float dt)
   }
   else if (this->velocity.x < 0.f)
   {
+    this->velocity.x += this->deceleration;
     if (this->velocity.y != 0.f && this->velocity.x < -this->maxvelocity / 2)
     {
       this->velocity.x = -this->maxvelocity / 2;
@@ -38,7 +39,6 @@ void MovementComponent::update(float dt)
     {
       this->velocity.x = -this->maxvelocity;
     }
-    this->velocity.x += this->deceleration;
     if (this->velocity.x > 0.f)
     {
       this->velocity.x = 0.f;
@@ -46,6 +46,7 @@ void MovementComponent::update(float dt)
   }
   if (this->velocity.y > 0.f)
   {
+    this->velocity.y -= deceleration;
     if (this->velocity.x != 0.f && this->velocity.y > this->maxvelocity / 2)
     {
       this->velocity.y = this->maxvelocity / 2;
@@ -54,7 +55,6 @@ void MovementComponent::update(float dt)
     {
       this->velocity.y = this->maxvelocity;
     }
-    this->velocity.y -= deceleration;
     if (this->velocity.y < 0.f)
     {
       this->velocity.y = 0.f;
@@ -62,6 +62,7 @@ void MovementComponent::update(float dt)
   }
   else if (this->velocity.y < 0.f)
   {
+    this->velocity.y += deceleration;
     if (this->velocity.x != 0.f && this->velocity.y < -this->maxvelocity / 2)
     {
       this->velocity.y = -this->maxvelocity / 2;
@@ -70,7 +71,6 @@ void MovementComponent::update(float dt)
     {
       this->velocity.y = -this->maxvelocity;
     }
-    this->velocity.y += deceleration;
     if (this->velocity.y > 0.f)
     {
       this->velocity.y = 0.f;

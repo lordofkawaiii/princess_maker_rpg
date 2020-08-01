@@ -40,7 +40,9 @@ target_sources(
           src/entities/components/MovementComponent.hpp
           src/entities/components/MovementComponent.cpp
           src/entities/components/AnimationComponent.hpp
-          src/entities/components/AnimationComponent.cpp)
+          src/entities/components/AnimationComponent.cpp
+          src/states/EditorState.hpp
+          src/states/EditorState.cpp)
 
 target_compile_features(princess_maker_rpg PRIVATE cxx_std_17)
 

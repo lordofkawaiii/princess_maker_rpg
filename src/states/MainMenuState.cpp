@@ -68,6 +68,11 @@ void MainMenuState::update(float dt)
     this->states->push(new GameState(this->window, this->supportedKeys, this->states));
   }
 
+  if (this->buttons["editor"]->isPressed())
+  {
+    this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
+  }
+
   if (this->buttons["exit"]->isPressed())
   {
     this->endState();

@@ -16,7 +16,7 @@ void AnimationComponent::startAnimation(const std::string& animationName)
 }
 void AnimationComponent::resetAnimation(const std::string& animationName)
 {
-  //
+  this->animationSheet[animationName]->reset();
 }
 void AnimationComponent::endAnimation(const std::string& animationName)
 {

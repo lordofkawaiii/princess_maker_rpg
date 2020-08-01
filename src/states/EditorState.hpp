@@ -1,11 +1,8 @@
 #pragma once
-
-#include "EditorState.hpp"
-#include "GameState.hpp"
 #include "State.hpp"
 #include "UI/Button.hpp"
 
-class MainMenuState : public State
+class EditorState : public State
 {
 private:
   //functions
@@ -20,9 +17,9 @@ protected:
   std::vector<std::string>       button_order;
 
 public:
-  MainMenuState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
-                std::stack<State*>* states);
-  ~MainMenuState();
+  EditorState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
+              std::stack<State*>* states);
+  ~EditorState();
   void update(float dt);
   void updateKeyBinds(float dt);
   void render(sf::RenderTarget* target = nullptr);
