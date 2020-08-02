@@ -76,13 +76,6 @@ void MovementComponent::update(float dt)
       this->velocity.y = 0.f;
     }
   }
-  std::cout << this->velocity.x << " " << this->velocity.y << std::endl;
-  // if (this->velocity.x != 0 && this->velocity.y != 0)
-  // {
-  //   this->velocity = this->velocity / 2.f;
-  //   std::cout << "-------------------" << std::endl;
-  //   std::cout << this->velocity.x << " " << this->velocity.y << std::endl;
-  // }
 
   this->sprite->move(this->velocity * dt);
 }

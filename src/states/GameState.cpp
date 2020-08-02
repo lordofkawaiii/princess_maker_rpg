@@ -7,6 +7,7 @@ GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* suppo
   this->initKeyBinds();
   this->initTextures();
   this->initPlayer();
+  this->setBackground();
 }
 GameState::~GameState()
 {
@@ -24,8 +25,8 @@ void GameState::update(float dt)
 }
 void GameState::render(sf::RenderTarget* target)
 {
-  this->player->render(target);
   this->window->draw(this->background);
+  this->player->render(target);
 }
 void GameState::updateKeyBinds(float dt)
 {
@@ -71,4 +72,11 @@ void GameState::initKeyBinds()
 void GameState::initTextures()
 {
   this->addTexture("all_sheet", "ressources/TopDownCharacter/Character/all_sheets.png");
+}
+
+void GameState::setBackground()
+{
+  this->background.setSize(sf::Vector2f(static_cast<float>(this->window->getSize().x),
+                                        static_cast<float>(this->window->getSize().y)));
+  this->background.setFillColor(sf::Color::White);
 }

@@ -24,6 +24,7 @@ Player::Player(float x, float y, sf::Texture* texture)
     this->movementComponent->getDirString(bottom_left), 25.f, 0, 14, 3, 14, 32, 32);
   this->animationComponent->addAnimation(
     this->movementComponent->getDirString(bottom_right), 25.f, 0, 15, 3, 15, 32, 32);
+  this->createHitboxComponent();
   // this->initComponents();
   this->dir = this->movementComponent->getDirString(idle);
 }
@@ -51,4 +52,5 @@ void Player::update(float dt)
     this->animationComponent->resetAnimation(this->dir);
     this->animationComponent->play(this->dir, dt);
   }
+  this->hitboxComponent->update();
 }

@@ -22,4 +22,5 @@ public:
   void render(sf::RenderTarget* target = nullptr);
   void initTextures();
   void initPlayer();
+  void setBackground();
 };

@@ -25,6 +25,10 @@ void Entity::render(sf::RenderTarget* target)
   {
     target->draw(*this->sprite);
   }
+  if (this->hitboxComponent)
+  {
+    this->hitboxComponent->render(target);
+  }
 }
 
 void Entity::update(float dt) {}
@@ -72,4 +76,12 @@ void Entity::createAnimationComponent(sf::Texture& texture)
     this->createSprite(&texture);
   }
   this->animationComponent = new AnimationComponent(*this->sprite, texture);
+}
+
+void Entity::createHitboxComponent()
+{
+  if (this->sprite)
+  {
+    this->hitboxComponent = std::make_unique<HitboxComponent>(*this->sprite, 8, 7);
+  }
 }

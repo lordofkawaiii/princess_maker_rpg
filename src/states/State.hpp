@@ -30,5 +30,6 @@ public:
   virtual void updateMousePositions();
   virtual void updateKeyBinds(float dt) = 0;
   virtual void update(float dt) = 0;
+  virtual void setBackground();
   virtual void render(sf::RenderTarget* target = nullptr) = 0;
 };

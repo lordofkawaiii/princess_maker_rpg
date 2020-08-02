@@ -34,3 +34,8 @@ void State::addTexture(std::string textureName, std::string path)
   temp.loadFromFile(path);
   this->textures[textureName] = temp;
 }
+
+void State::setBackground()
+{
+  //
+}

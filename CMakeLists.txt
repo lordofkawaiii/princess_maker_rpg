@@ -42,7 +42,9 @@ target_sources(
           src/entities/components/AnimationComponent.hpp
           src/entities/components/AnimationComponent.cpp
           src/states/EditorState.hpp
-          src/states/EditorState.cpp)
+          src/states/EditorState.cpp
+          src/entities/components/HitboxComponent.hpp
+          src/entities/components/HitboxComponent.cpp)
 
 target_compile_features(princess_maker_rpg PRIVATE cxx_std_17)
 
