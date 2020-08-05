@@ -8,22 +8,26 @@ MainMenuState::MainMenuState(sf::RenderWindow*           window,
   this->initKeyBinds();
   this->initFont();
 
-  this->addButton(10.f, 10.f, 150.f, 100.f, std::string("new game"), &this->font, 20,
+  this->addButton(10.f, 10.f, this->window->getSize().x / 4,
+                  this->window->getSize().y / 8, std::string("new game"), &this->font, 20,
                   sf::Color(250, 250, 250, 250), sf::Color(175, 175, 175, 250),
                   sf::Color(100, 100, 100, 200), sf::Color(0, 0, 0, 200),
                   sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 200));
 
-  this->addButton(200.f, 200.f, 150.f, 100.f, std::string("settings"), &this->font, 20,
+  this->addButton(200.f, 200.f, this->window->getSize().x / 4,
+                  this->window->getSize().y / 8, std::string("settings"), &this->font, 20,
                   sf::Color(250, 250, 250, 250), sf::Color(175, 175, 175, 250),
                   sf::Color(100, 100, 100, 200), sf ::Color(0, 0, 0, 200),
                   sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 200));
 
-  this->addButton(200.f, 200.f, 150.f, 100.f, std::string("editor"), &this->font, 20,
+  this->addButton(200.f, 200.f, this->window->getSize().x / 4,
+                  this->window->getSize().y / 8, std::string("editor"), &this->font, 20,
                   sf::Color(250, 250, 250, 250), sf::Color(175, 175, 175, 250),
                   sf::Color(100, 100, 100, 200), sf::Color(0, 0, 0, 200),
                   sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 200));
 
-  this->addButton(200.f, 200.f, 150.f, 100.f, std::string("exit"), &this->font, 20,
+  this->addButton(200.f, 200.f, this->window->getSize().x / 4,
+                  this->window->getSize().y / 8, std::string("exit"), &this->font, 20,
                   sf::Color(250, 250, 250, 250), sf::Color(175, 175, 175, 250),
                   sf::Color(100, 100, 100, 200), sf::Color(0, 0, 0, 200),
                   sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 200));
@@ -53,7 +57,8 @@ void MainMenuState::updateButtons()
 void MainMenuState::update(float dt)
 {
   this->updateMousePositions();
-  this->updateKeyBinds(dt);
+  this->updateKeytime(dt);
+  this->updateGeneralInput(dt);
   for (auto& [_, b] : buttons)
   {
     b->update(this->mouseToView);
@@ -63,19 +68,23 @@ void MainMenuState::update(float dt)
 
   // handle buttons
   //quit the game
-  if (this->buttons["new game"]->isPressed())
+  if (this->getKeyready())
   {
-    this->states->push(new GameState(this->window, this->supportedKeys, this->states));
-  }
+    if (this->buttons["new game"]->isPressed())
+    {
+      this->states->push(new GameState(this->window, this->supportedKeys, this->states));
+    }
 
-  if (this->buttons["editor"]->isPressed())
-  {
-    this->states->push(new EditorState(this->window, this->supportedKeys, this->states));
-  }
+    if (this->buttons["editor"]->isPressed())
+    {
+      this->states->push(
+        new EditorState(this->window, this->supportedKeys, this->states));
+    }
 
-  if (this->buttons["exit"]->isPressed())
-  {
-    this->endState();
+    if (this->buttons["exit"]->isPressed())
+    {
+      this->endState();
+    }
   }
 }
 void MainMenuState::render(sf::RenderTarget* target)
@@ -88,7 +97,7 @@ void MainMenuState::render(sf::RenderTarget* target)
     button->render(target);
   }
 }
-void MainMenuState::updateKeyBinds(float dt)
+void MainMenuState::updateGeneralInput(float dt)
 {
   // this->checkForEnd();
 }
@@ -112,7 +121,7 @@ void MainMenuState::initFont()
 {
   if (!(this->font.loadFromFile("ressources/Fonts/propaganda.ttf")))
   {
-    // throw("could not load font");
+    throw("could not load font");
   }
 }
 
@@ -122,7 +131,7 @@ void MainMenuState::setBackground()
                                         static_cast<float>(this->window->getSize().y)));
   if (!this->bgTexture.loadFromFile("ressources/images/fascist_flag.png"))
   {
-    // throw "could not load the texture";
+    throw "could not load the texture";
   }
   this->background.setTexture(&this->bgTexture);
 }

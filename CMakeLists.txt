@@ -44,7 +44,13 @@ target_sources(
           src/states/EditorState.hpp
           src/states/EditorState.cpp
           src/entities/components/HitboxComponent.hpp
-          src/entities/components/HitboxComponent.cpp)
+          src/entities/components/HitboxComponent.cpp
+          src/utilities/Tile.hpp
+          src/utilities/Tile.cpp
+          src/UI/PauseMenu.hpp
+          src/UI/PauseMenu.cpp
+          src/states/SettingState.hpp
+          src/states/SettingState.cpp)
 
 target_compile_features(princess_maker_rpg PRIVATE cxx_std_17)
 

@@ -32,7 +32,7 @@ void EditorState::updateButtons()
 void EditorState::update(float dt)
 {
   this->updateMousePositions();
-  this->updateKeyBinds(dt);
+  this->updateGeneralInput(dt);
   for (auto& [_, b] : buttons)
   {
     b->update(this->mouseToView);
@@ -48,7 +48,7 @@ void EditorState::render(sf::RenderTarget* target)
     button->render(target);
   }
 }
-void EditorState::updateKeyBinds(float dt)
+void EditorState::updateGeneralInput(float dt)
 {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("CLOSE"))))
   {

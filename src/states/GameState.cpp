@@ -4,6 +4,7 @@ GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* suppo
                      std::stack<State*>* states)
   : State(window, supportedKeys, states)
 {
+  this->pauseMenu = new PauseMenu(this);
   this->initKeyBinds();
   this->initTextures();
   this->initPlayer();
@@ -20,15 +21,44 @@ void GameState::initPlayer()
 void GameState::update(float dt)
 {
   this->updateMousePositions();
-  this->updateKeyBinds(dt);
-  this->player->update(dt);
+  this->updateKeytime(dt);
+  this->updateGeneralInput(dt);
+
+  if (!this->paused)
+  {
+    this->updatePlayerInput(dt);
+    this->player->update(dt);
+  }
+  else
+  {
+    this->pauseMenu->update();
+  }
 }
 void GameState::render(sf::RenderTarget* target)
 {
   this->window->draw(this->background);
   this->player->render(target);
+  if (this->paused)
+  {
+    this->pauseMenu->render(target);
+  }
 }
-void GameState::updateKeyBinds(float dt)
+void GameState::updateGeneralInput(float dt)
+{
+  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("CLOSE"))) and
+      this->getKeyready())
+  {
+    if (this->paused)
+    {
+      this->unpauseState();
+    }
+    else
+    {
+      this->pauseState();
+    }
+  }
+}
+void GameState::updatePlayerInput(float dt)
 {
   // this->checkForEnd();
 
@@ -47,10 +77,6 @@ void GameState::updateKeyBinds(float dt)
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("MOVE_RIGHT"))))
   {
     this->player->move(dt, 1, 0);
-  }
-  if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybind.at("CLOSE"))))
-  {
-    this->endState();
   }
 }
 void GameState::initKeyBinds()

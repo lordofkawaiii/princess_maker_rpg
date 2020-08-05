@@ -85,7 +85,6 @@ void Game::update()
       // quit the state
       delete this->states.top();
       this->states.pop();
-      std::cout << "quitting state" << std::endl;
     }
   }
   else

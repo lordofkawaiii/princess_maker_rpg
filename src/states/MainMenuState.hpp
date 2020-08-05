@@ -24,7 +24,7 @@ public:
                 std::stack<State*>* states);
   ~MainMenuState();
   void update(float dt);
-  void updateKeyBinds(float dt);
+  void updateGeneralInput(float dt);
   void render(sf::RenderTarget* target = nullptr);
   void addButton(float x, float y, float width, float height, std::string text,
                  sf::Font* font, unsigned int charSize, sf::Color idleText,

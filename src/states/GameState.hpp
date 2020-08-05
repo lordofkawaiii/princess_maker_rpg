@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.hpp"
+#include "UI/PauseMenu.hpp"
 #include "entities/Player.hpp"
 
 class GameState : public State
@@ -11,6 +12,7 @@ private:
 protected:
   Player*            player;
   sf::RectangleShape background;
+  PauseMenu*         pauseMenu;
 
 public:
   GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
@@ -18,7 +20,8 @@ public:
   ~GameState();
 
   void update(float dt);
-  void updateKeyBinds(float dt);
+  void updatePlayerInput(float dt);
+  void updateGeneralInput(float dt);
   void render(sf::RenderTarget* target = nullptr);
   void initTextures();
   void initPlayer();
