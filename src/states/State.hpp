@@ -1,5 +1,6 @@
 #pragma once
 
+#include "UI/Button.hpp"
 #include "entities/Entity.hpp"
 
 class State
@@ -7,6 +8,7 @@ class State
 private:
 protected:
   sf::RenderWindow*                  window;
+  std::map<std::string, Button*>     buttons;
   bool                               wantsEnd;
   std::map<std::string, int>*        supportedKeys;
   std::map<std::string, int>         keybind;
@@ -27,16 +29,18 @@ public:
         std::stack<State*>* states);
   virtual ~State();
 
-  void         addTexture(std::string textureName, std::string path);
-  bool         getEnd();
-  void         endState();
-  virtual void initKeyBinds() = 0;
-  virtual void updateMousePositions();
-  virtual void updateGeneralInput(float dt) = 0;
-  virtual void update(float dt) = 0;
-  virtual void setBackground();
-  virtual void render(sf::RenderTarget* target = nullptr) = 0;
-  virtual void updateKeytime(float dt);
+  void                            addTexture(std::string textureName, std::string path);
+  bool                            getEnd();
+  void                            endState();
+  virtual void                    initKeyBinds() = 0;
+  virtual void                    updateMousePositions();
+  virtual void                    updateGeneralInput(float dt) = 0;
+  virtual void                    update(float dt) = 0;
+  virtual void                    setBackground();
+  virtual void                    render(sf::RenderTarget* target = nullptr) = 0;
+  virtual void                    updateKeytime(float dt);
+  virtual bool                    hasButtons();
+  std::map<std::string, Button*>& getButtons();
 
   void pauseState();
   void unpauseState();

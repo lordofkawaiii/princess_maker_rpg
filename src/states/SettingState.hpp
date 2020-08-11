@@ -1,12 +1,16 @@
 #pragma once
-#include "State.hpp"
+#include "StateWButtons.hpp"
+#include "UI/Button.hpp"
 
-class SettingState : public State
+class SettingState : public StateWButtons
 {
 private:
-  /* data */
 public:
   SettingState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
                std::stack<State*>* states);
   ~SettingState();
+  void update(float dt);
+  void updateGeneralInput(float dt);
+  void initKeyBinds();
+  void render(sf::RenderTarget* target);
 };

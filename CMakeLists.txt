@@ -50,7 +50,9 @@ target_sources(
           src/UI/PauseMenu.hpp
           src/UI/PauseMenu.cpp
           src/states/SettingState.hpp
-          src/states/SettingState.cpp)
+          src/states/SettingState.cpp
+          src/states/StateWButtons.hpp
+          src/states/StateWButtons.cpp)
 
 target_compile_features(princess_maker_rpg PRIVATE cxx_std_17)
 

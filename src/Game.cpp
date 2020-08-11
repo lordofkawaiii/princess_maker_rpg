@@ -67,6 +67,18 @@ void Game::updateSFMLevents()
   {
     if (this->event.type == sf::Event::Closed)
       this->renderWindow->close();
+    if (this->event.type == sf::Event::MouseButtonPressed)
+    {
+      std::map<std::string, Button*>& buttons = this->states.top()->getButtons();
+      sf::Vector2f                    mousePos = this->states.top()->getMouseToView();
+      for (auto [_, button] : buttons)
+      {
+        if (button->isCursorIn(mousePos))
+        {
+          button->setClicked();
+        }
+      }
+    }
   }
 }
 

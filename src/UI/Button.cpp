@@ -35,15 +35,20 @@ Button::~Button() {}
 void Button::update(const sf::Vector2f mousePosition)
 {
 
-  this->buttonState = IDLE;
-
-  if (this->rect.getGlobalBounds().contains(mousePosition))
+  if (isPressed())
   {
-    this->buttonState = HOVER;
-
-    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    std::cout << "qsefg" << std::endl;
+  }
+  else
+  {
+    if (this->rect.getGlobalBounds().contains(mousePosition))
     {
-      this->buttonState = PRESSED;
+      this->buttonState = HOVER;
+    }
+
+    else
+    {
+      this->buttonState = IDLE;
     }
   }
 
@@ -95,4 +100,19 @@ sf::Vector2f Button::getSize()
 void Button::setSize(const float width, const float height)
 {
   this->rect.setSize(sf::Vector2f(width, height));
+}
+
+bool Button::isCursorIn(const sf::Vector2f mousePosition)
+{
+  return this->rect.getGlobalBounds().contains(mousePosition);
+}
+
+void Button::setClicked()
+{
+  this->buttonState = PRESSED;
+}
+
+void Button::resetSate()
+{
+  this->buttonState = IDLE;
 }

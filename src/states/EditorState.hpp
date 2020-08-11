@@ -1,20 +1,15 @@
 #pragma once
-#include "State.hpp"
-#include "UI/Button.hpp"
+#include "StateWButtons.hpp"
 
-class EditorState : public State
+class EditorState : public StateWButtons
 {
 private:
   //functions
   void initKeyBinds();
-  void initFont();
 
 protected:
-  sf::Texture                    bgTexture;
-  sf::RectangleShape             background;
-  sf::Font                       font;
-  std::map<std::string, Button*> buttons;
-  std::vector<std::string>       button_order;
+  sf::Texture        bgTexture;
+  sf::RectangleShape background;
 
 public:
   EditorState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
@@ -23,10 +18,5 @@ public:
   void update(float dt);
   void updateGeneralInput(float dt);
   void render(sf::RenderTarget* target = nullptr);
-  void addButton(float x, float y, float width, float height, std::string text,
-                 sf::Font* font, unsigned int charSize, sf::Color idleText,
-                 sf::Color hoverText, sf::Color activeText, sf::Color idleColor,
-                 sf::Color hoverColor, sf::Color activeColor);
   void setBackground();
-  void updateButtons();
 };

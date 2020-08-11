@@ -80,3 +80,13 @@ bool State::getKeyready()
     return false;
   }
 }
+
+bool State::hasButtons()
+{
+  return false;
+}
+
+std::map<std::string, Button*>& State::getButtons()
+{
+  return (this->buttons);
+}

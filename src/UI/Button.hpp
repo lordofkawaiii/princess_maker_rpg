@@ -46,4 +46,7 @@ public:
   void         setPosition(const float windowWidth, const float windowHeight);
   sf::Vector2f getSize();
   void         setSize(const float width, const float height);
+  bool         isCursorIn(const sf::Vector2f mousePosition);
+  void         setClicked();
+  void         resetSate();
 };

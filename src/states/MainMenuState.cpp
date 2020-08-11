@@ -3,7 +3,7 @@
 MainMenuState::MainMenuState(sf::RenderWindow*           window,
                              std::map<std::string, int>* supportedKeys,
                              std::stack<State*>*         states)
-  : State(window, supportedKeys, states)
+  : StateWButtons(window, supportedKeys, states)
 {
   this->initKeyBinds();
   this->initFont();
@@ -41,19 +41,6 @@ MainMenuState::~MainMenuState()
     delete b;
 }
 
-void MainMenuState::updateButtons()
-{
-  float height = this->window->getSize().y;
-  float k = 1;
-  for (auto name : button_order)
-  {
-    Button* target = buttons[name];
-    target->setPosition((this->window->getSize().x / 2.f) - (target->getSize().x / 2.f),
-                        (height / (this->buttons.size() + 1)) * k);
-    k = k + 1;
-    // target->setSize(width/3.0,height/this->buttons.size());
-  }
-}
 void MainMenuState::update(float dt)
 {
   this->updateMousePositions();
@@ -73,12 +60,21 @@ void MainMenuState::update(float dt)
     if (this->buttons["new game"]->isPressed())
     {
       this->states->push(new GameState(this->window, this->supportedKeys, this->states));
+      this->buttons["new game"]->resetSate();
     }
 
     if (this->buttons["editor"]->isPressed())
     {
       this->states->push(
         new EditorState(this->window, this->supportedKeys, this->states));
+      this->buttons["editor"]->resetSate();
+    }
+
+    if (this->buttons["settings"]->isPressed())
+    {
+      this->states->push(
+        new SettingState(this->window, this->supportedKeys, this->states));
+      this->buttons["settings"]->resetSate();
     }
 
     if (this->buttons["exit"]->isPressed())
@@ -117,14 +113,6 @@ void MainMenuState::initKeyBinds()
   ifstr.close();
 }
 
-void MainMenuState::initFont()
-{
-  if (!(this->font.loadFromFile("ressources/Fonts/propaganda.ttf")))
-  {
-    throw("could not load font");
-  }
-}
-
 void MainMenuState::setBackground()
 {
   this->background.setSize(sf::Vector2f(static_cast<float>(this->window->getSize().x),
@@ -134,16 +122,4 @@ void MainMenuState::setBackground()
     throw "could not load the texture";
   }
   this->background.setTexture(&this->bgTexture);
-}
-
-void MainMenuState::addButton(float x, float y, float width, float height,
-                              std::string text, sf::Font* font, unsigned int charSize,
-                              sf::Color idleText, sf::Color hoverText,
-                              sf::Color activeText, sf::Color idleColor,
-                              sf::Color hoverColor, sf::Color activeColor)
-{
-  this->buttons[text] =
-    new Button(x, y, width, height, text, font, charSize, idleText, hoverText, activeText,
-               idleColor, hoverColor, activeColor);
-  this->button_order.insert(this->button_order.end(), text);
 }
