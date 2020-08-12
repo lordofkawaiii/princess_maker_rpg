@@ -19,14 +19,14 @@
 
 class PauseMenu
 {
-private:
-  sf::RectangleShape                             bckground;
-  sf::RectangleShape                             container;
-  std::map<std::string, std::unique_ptr<Button>> buttons;
-  std::vector<std::string>                       button_order;
-  sf::Font                                       font;
-  sf::Text                                       pauseText;
-  State*                                         origin;
+protected:
+  sf::RectangleShape             bckground;
+  sf::RectangleShape             container;
+  std::map<std::string, Button*> buttons;
+  std::vector<std::string>       button_order;
+  sf::Font                       font;
+  sf::Text                       pauseText;
+  State*                         origin;
 
 public:
   PauseMenu(State* state);
@@ -40,4 +40,5 @@ public:
   void updateButtons();
   void initPlayer();
   void render(sf::RenderTarget* target);
+  std::map<std::string, Button*> getButtons();
 };

@@ -52,7 +52,9 @@ target_sources(
           src/states/SettingState.hpp
           src/states/SettingState.cpp
           src/states/StateWButtons.hpp
-          src/states/StateWButtons.cpp)
+          src/states/StateWButtons.cpp
+          src/states/StateWPause.hpp
+          src/states/StateWPause.cpp)
 
 target_compile_features(princess_maker_rpg PRIVATE cxx_std_17)
 

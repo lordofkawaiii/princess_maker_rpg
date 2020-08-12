@@ -1,10 +1,9 @@
 #pragma once
 
-#include "State.hpp"
-#include "UI/PauseMenu.hpp"
+#include "StateWPause.hpp"
 #include "entities/Player.hpp"
 
-class GameState : public State
+class GameState : public StateWPause
 {
 private:
   void initKeyBinds();
@@ -12,7 +11,6 @@ private:
 protected:
   Player*            player;
   sf::RectangleShape background;
-  PauseMenu*         pauseMenu;
 
 public:
   GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,

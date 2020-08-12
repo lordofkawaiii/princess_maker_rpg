@@ -29,18 +29,18 @@ public:
         std::stack<State*>* states);
   virtual ~State();
 
-  void                            addTexture(std::string textureName, std::string path);
-  bool                            getEnd();
-  void                            endState();
-  virtual void                    initKeyBinds() = 0;
-  virtual void                    updateMousePositions();
-  virtual void                    updateGeneralInput(float dt) = 0;
-  virtual void                    update(float dt) = 0;
-  virtual void                    setBackground();
-  virtual void                    render(sf::RenderTarget* target = nullptr) = 0;
-  virtual void                    updateKeytime(float dt);
-  virtual bool                    hasButtons();
-  std::map<std::string, Button*>& getButtons();
+  void         addTexture(std::string textureName, std::string path);
+  bool         getEnd();
+  void         endState();
+  virtual void initKeyBinds() = 0;
+  virtual void updateMousePositions();
+  virtual void updateGeneralInput(float dt) = 0;
+  virtual void update(float dt) = 0;
+  virtual void setBackground();
+  virtual void render(sf::RenderTarget* target = nullptr) = 0;
+  virtual void updateKeytime(float dt);
+  virtual bool hasButtons();
+  virtual std::map<std::string, Button*> getButtons();
 
   void pauseState();
   void unpauseState();

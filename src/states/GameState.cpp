@@ -2,9 +2,9 @@
 
 GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
                      std::stack<State*>* states)
-  : State(window, supportedKeys, states)
+  : StateWPause(window, supportedKeys, states)
 {
-  this->pauseMenu = new PauseMenu(this);
+
   this->initKeyBinds();
   this->initTextures();
   this->initPlayer();

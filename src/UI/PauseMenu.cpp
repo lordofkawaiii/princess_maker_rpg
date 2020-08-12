@@ -78,8 +78,8 @@ void PauseMenu::addButton(float x, float y, float width, float height, std::stri
                           sf::Color hoverColor, sf::Color activeColor)
 {
   this->buttons[text] =
-    std::make_unique<Button>(x, y, width, height, text, font, charSize, idleText,
-                             hoverText, activeText, idleColor, hoverColor, activeColor);
+    new Button(x, y, width, height, text, font, charSize, idleText, hoverText, activeText,
+               idleColor, hoverColor, activeColor);
   this->button_order.insert(this->button_order.end(), text);
 }
 
@@ -97,4 +97,8 @@ void PauseMenu::updateButtons()
     //                        height / this->buttons.size());
     k = k + 1;
   }
+}
+std::map<std::string, Button*> PauseMenu::getButtons()
+{
+  return this->buttons;
 }

@@ -86,7 +86,7 @@ bool State::hasButtons()
   return false;
 }
 
-std::map<std::string, Button*>& State::getButtons()
+std::map<std::string, Button*> State::getButtons()
 {
   return (this->buttons);
 }

@@ -37,7 +37,6 @@ void Button::update(const sf::Vector2f mousePosition)
 
   if (isPressed())
   {
-    std::cout << "qsefg" << std::endl;
   }
   else
   {

@@ -48,7 +48,7 @@ bool StateWButtons::hasButtons()
   return true;
 }
 
-std::map<std::string, Button*>& StateWButtons::getButtons()
+std::map<std::string, Button*> StateWButtons::getButtons()
 {
   return (this->buttons);
 }
