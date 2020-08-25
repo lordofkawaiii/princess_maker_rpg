@@ -31,15 +31,27 @@ void StateWButtons::initFont()
 
 void StateWButtons::updateButtons()
 {
-  float height = this->window->getSize().y;
+  // float height = this->window->getSize().y;
+  // float width = this->window->getSize().x;
+  // float k = 1;
+  // for (auto name : button_order)
+  // {
+  //   Button* target = buttons[name];
+  //   target->setPosition((width / 2.f) - (target->getSize().x / 2.f),
+  //                       (height / (this->buttons.size() + 1)) * k);
+  //   k = k + 1;
+  //   // target->setSize(width/3.0,height/this->buttons.size());
+  // }
+  float height = this->getRenderWindow()->getView().getSize().y;
+  float width = this->getRenderWindow()->getView().getSize().x;
   float k = 1;
   for (auto name : button_order)
   {
-    Button* target = buttons[name];
-    target->setPosition((this->window->getSize().x / 2.f) - (target->getSize().x / 2.f),
-                        (height / (this->buttons.size() + 1)) * k);
+    buttons[name]->setPosition((width / 2.f) - (buttons[name]->getSize().x / 2.f),
+                               (height / (this->buttons.size() + 1)) * k);
+    // buttons[name]->setSize(this->container.getGlobalBounds().width,
+    //                        height / this->buttons.size());
     k = k + 1;
-    // target->setSize(width/3.0,height/this->buttons.size());
   }
 }
 
@@ -48,7 +60,19 @@ bool StateWButtons::hasButtons()
   return true;
 }
 
-std::map<std::string, Button*> StateWButtons::getButtons()
+std::vector<Button*> StateWButtons::getButtons()
 {
-  return (this->buttons);
+  std::vector<Button*> res;
+  for (const auto& [_, button] : this->buttons)
+  {
+    res.push_back(button);
+  }
+  // for (auto dropDownList : this->dropDownLists)
+  // {
+  //   for (Button* button : dropDownList->getButtons())
+  //   {
+  //     res.push_back(button);
+  //   }
+  // }
+  return res;
 }

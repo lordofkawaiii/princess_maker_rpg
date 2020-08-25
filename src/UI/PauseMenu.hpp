@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Button.hpp"
+#include "states/SettingState.hpp"
 #include "states/State.hpp"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>

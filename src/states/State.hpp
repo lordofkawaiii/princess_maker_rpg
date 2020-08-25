@@ -1,14 +1,16 @@
 #pragma once
 
 #include "UI/Button.hpp"
+#include "UI/DropDown.hpp"
 #include "entities/Entity.hpp"
 
 class State
 {
 private:
 protected:
-  sf::RenderWindow*                  window;
-  std::map<std::string, Button*>     buttons;
+  sf::RenderWindow*              window;
+  std::map<std::string, Button*> buttons;
+
   bool                               wantsEnd;
   std::map<std::string, int>*        supportedKeys;
   std::map<std::string, int>         keybind;
@@ -29,18 +31,20 @@ public:
         std::stack<State*>* states);
   virtual ~State();
 
-  void         addTexture(std::string textureName, std::string path);
-  bool         getEnd();
-  void         endState();
-  virtual void initKeyBinds() = 0;
-  virtual void updateMousePositions();
-  virtual void updateGeneralInput(float dt) = 0;
-  virtual void update(float dt) = 0;
-  virtual void setBackground();
-  virtual void render(sf::RenderTarget* target = nullptr) = 0;
-  virtual void updateKeytime(float dt);
-  virtual bool hasButtons();
-  virtual std::map<std::string, Button*> getButtons();
+  void                         addTexture(std::string textureName, std::string path);
+  bool                         getEnd();
+  void                         endState();
+  virtual void                 initKeyBinds() = 0;
+  virtual void                 updateMousePositions();
+  virtual void                 updateGeneralInput(float dt) = 0;
+  virtual void                 update(float dt) = 0;
+  virtual void                 setBackground();
+  virtual void                 render(sf::RenderTarget* target = nullptr) = 0;
+  virtual void                 updateKeytime(float dt);
+  virtual bool                 hasButtons();
+  virtual std::vector<Button*> getButtons();
+  std::stack<State*>*          getStates();
+  std::map<std::string, int>*  getSupportedKeys();
 
   void pauseState();
   void unpauseState();

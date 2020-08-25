@@ -11,6 +11,6 @@ public:
   StateWPause(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
               std::stack<State*>* states);
   ~StateWPause();
-  bool                           hasButtons();
-  std::map<std::string, Button*> getButtons();
+  bool                 hasButtons();
+  std::vector<Button*> getButtons();
 };

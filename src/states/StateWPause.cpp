@@ -15,15 +15,21 @@ bool StateWPause::hasButtons()
   return this->paused;
 }
 
-std::map<std::string, Button*> StateWPause::getButtons()
+std::vector<Button*> StateWPause::getButtons()
 {
   if (this->paused)
   {
-    return (this->pauseMenu->getButtons());
+    std::vector<Button*> res;
+    for (const auto& [_, button] : this->pauseMenu->getButtons())
+    {
+      res.push_back(button);
+    }
+    std::cout << "state is  paused" << std::endl;
+    return res;
   }
   else
   {
-    return this->getButtons();
     std::cout << "state is not paused" << std::endl;
+    return this->getButtons();
   }
 }

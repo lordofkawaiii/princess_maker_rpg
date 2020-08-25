@@ -54,7 +54,9 @@ target_sources(
           src/states/StateWButtons.hpp
           src/states/StateWButtons.cpp
           src/states/StateWPause.hpp
-          src/states/StateWPause.cpp)
+          src/states/StateWPause.cpp
+          src/UI/DropDown.hpp
+          src/UI/DropDown.cpp)
 
 target_compile_features(princess_maker_rpg PRIVATE cxx_std_17)
 

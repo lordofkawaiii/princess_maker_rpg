@@ -9,7 +9,7 @@ State::State(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys
   this->states = states;
   this->paused = false;
   this->keytime = 0.f;
-  this->keytimeMax = 2.f;
+  this->keytimeMax = 1.f;
 }
 
 State::~State() {}
@@ -86,7 +86,16 @@ bool State::hasButtons()
   return false;
 }
 
-std::map<std::string, Button*> State::getButtons()
+std::vector<Button*> State::getButtons()
 {
-  return (this->buttons);
+  return (std::vector<Button*>());
+}
+
+std::stack<State*>* State::getStates()
+{
+  return this->states;
+}
+std::map<std::string, int>* State::getSupportedKeys()
+{
+  return this->supportedKeys;
 }

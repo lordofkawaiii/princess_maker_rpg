@@ -20,5 +20,5 @@ public:
                  sf::Color hoverText, sf::Color activeText, sf::Color idleColor,
                  sf::Color hoverColor, sf::Color activeColor);
   bool hasButtons();
-  std::map<std::string, Button*> getButtons();
+  std::vector<Button*> getButtons();
 };
