@@ -1,10 +1,13 @@
 #pragma once
-
+#include "PCH.hpp"
 class Tile
 {
 private:
-  /* data */
+  sf::RectangleShape shape;
+
 public:
-  Tile(/* args */);
+  Tile(float x, float y, float gridSize);
   ~Tile();
+  void update();
+  void render(sf::RenderTarget* target);
 };

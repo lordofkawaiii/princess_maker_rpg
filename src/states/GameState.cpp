@@ -36,7 +36,8 @@ void GameState::update(float dt)
 }
 void GameState::render(sf::RenderTarget* target)
 {
-  this->window->draw(this->background);
+  // this->window->draw(this->background);
+  this->map.render(target);
   this->player->render(target);
   if (this->paused)
   {

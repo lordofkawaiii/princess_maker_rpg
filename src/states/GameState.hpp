@@ -2,6 +2,7 @@
 
 #include "StateWPause.hpp"
 #include "entities/Player.hpp"
+#include "utilities/TileMap.hpp"
 
 class GameState : public StateWPause
 {
@@ -11,6 +12,7 @@ private:
 protected:
   Player*            player;
   sf::RectangleShape background;
+  TileMap            map;
 
 public:
   GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
