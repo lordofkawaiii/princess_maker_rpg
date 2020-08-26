@@ -76,3 +76,9 @@ std::vector<Button*> StateWButtons::getButtons()
   // }
   return res;
 }
+
+void StateWButtons::resizeAll()
+{
+  this->updateButtons();
+  this->setBackground();
+}

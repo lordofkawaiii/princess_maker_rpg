@@ -24,4 +24,5 @@ public:
   void initTextures();
   void initPlayer();
   void setBackground();
+  void resizeAll();
 };

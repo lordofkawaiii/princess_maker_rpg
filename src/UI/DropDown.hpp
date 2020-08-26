@@ -28,4 +28,8 @@ public:
   void                 addButton(Button* button);
   bool                 getKeytime();
   void                 updateKeytime(float dt);
+  void                 setPosition(sf::Vector2f position);
+  void                 setPosition(float x, float y);
+  sf::Vector2f         getSize();
+  short unsigned       getActiveElementId();
 };

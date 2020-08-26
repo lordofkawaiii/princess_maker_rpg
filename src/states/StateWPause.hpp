@@ -13,4 +13,5 @@ public:
   ~StateWPause();
   bool                 hasButtons();
   std::vector<Button*> getButtons();
+  void                 resizeAll();
 };

@@ -45,6 +45,7 @@ public:
   virtual std::vector<Button*> getButtons();
   std::stack<State*>*          getStates();
   std::map<std::string, int>*  getSupportedKeys();
+  virtual void                 resizeAll() = 0;
 
   void pauseState();
   void unpauseState();

@@ -95,3 +95,28 @@ void DropDown::updateKeytime(float dt)
     keytime += 1.f * dt;
   }
 }
+void DropDown::setPosition(sf::Vector2f position)
+{
+  this->activeElement->setPosition(position);
+  for (size_t i = 0; i < this->list.size(); i++)
+  {
+    this->list.at(i)->setPosition(position.x, position.y + i * list.at(i)->getSize().y);
+  }
+}
+void DropDown::setPosition(float x, float y)
+{
+  this->activeElement->setPosition(x, y);
+  for (size_t i = 0; i < this->list.size(); i++)
+  {
+    this->list.at(i)->setPosition(x, y + (i + 1) * list.at(i)->getSize().y);
+  }
+}
+sf::Vector2f DropDown::getSize()
+{
+  return this->activeElement->getSize();
+}
+
+short unsigned DropDown::getActiveElementId()
+{
+  return this->activeElement->getId();
+}

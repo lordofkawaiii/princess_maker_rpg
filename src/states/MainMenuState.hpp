@@ -24,4 +24,5 @@ public:
   void updateGeneralInput(float dt);
   void render(sf::RenderTarget* target = nullptr);
   void setBackground();
+  void resizeAll();
 };

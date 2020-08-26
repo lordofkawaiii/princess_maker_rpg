@@ -33,3 +33,7 @@ std::vector<Button*> StateWPause::getButtons()
     return this->getButtons();
   }
 }
+void StateWPause::resizeAll()
+{
+  this->setBackground();
+}

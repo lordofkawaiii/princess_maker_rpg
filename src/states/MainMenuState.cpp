@@ -123,3 +123,8 @@ void MainMenuState::setBackground()
   }
   this->background.setTexture(&this->bgTexture);
 }
+void MainMenuState::resizeAll()
+{
+  this->updateButtons();
+  this->setBackground();
+}

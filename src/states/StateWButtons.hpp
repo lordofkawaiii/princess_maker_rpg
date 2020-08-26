@@ -21,4 +21,5 @@ public:
                  sf::Color hoverColor, sf::Color activeColor);
   bool hasButtons();
   std::vector<Button*> getButtons();
+  void                 resizeAll();
 };

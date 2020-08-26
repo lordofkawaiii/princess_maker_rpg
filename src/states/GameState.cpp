@@ -106,3 +106,8 @@ void GameState::setBackground()
                                         static_cast<float>(this->window->getSize().y)));
   this->background.setFillColor(sf::Color::White);
 }
+
+void GameState::resizeAll()
+{
+  this->setBackground();
+}

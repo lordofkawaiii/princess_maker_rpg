@@ -69,3 +69,8 @@ void EditorState::setBackground()
   }
   this->background.setTexture(&this->bgTexture);
 }
+void EditorState::resizeAll()
+{
+  this->updateButtons();
+  this->setBackground();
+}
