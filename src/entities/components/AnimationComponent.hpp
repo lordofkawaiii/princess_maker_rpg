@@ -1,19 +1,7 @@
 #pragma once
 
-#include <SFML/Audio.hpp>
-#include <SFML/Graphics.hpp>
-#include <SFML/Network.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Window.hpp>
+#include "PCH.hpp"
 
-#include <cstdio>
-#include <ctime>
-#include <fstream>
-#include <iostream>
-#include <map>
-#include <sstream>
-#include <stack>
-#include <vector>
 class AnimationComponent
 {
 private:

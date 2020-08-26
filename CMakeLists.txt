@@ -47,6 +47,8 @@ target_sources(
           src/entities/components/HitboxComponent.cpp
           src/utilities/Tile.hpp
           src/utilities/Tile.cpp
+          src/utilities/TileMap.hpp
+          src/utilities/TileMap.cpp
           src/UI/PauseMenu.hpp
           src/UI/PauseMenu.cpp
           src/states/SettingState.hpp
@@ -59,6 +61,7 @@ target_sources(
           src/UI/DropDown.cpp)
 
 target_compile_features(princess_maker_rpg PRIVATE cxx_std_17)
+target_precompile_headers(princess_maker_rpg PRIVATE src/PCH.hpp)
 
 find_package(
   SFML 2.5
