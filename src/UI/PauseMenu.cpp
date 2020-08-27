@@ -60,13 +60,13 @@ void PauseMenu::update()
   {
     this->origin->endState();
   }
-  if (this->buttons["settings"]->isPressed())
-  {
-    this->origin->getStates()->push(new SettingState(this->origin->getRenderWindow(),
-                                                     this->origin->getSupportedKeys(),
-                                                     this->origin->getStates()));
-    this->buttons["settings"]->resetSate();
-  }
+  // if (this->buttons["settings"]->isPressed())
+  // {
+  //   this->origin->getStates()->push(new SettingState(this->origin->getRenderWindow(),
+  //                                                    this->origin->getSupportedKeys(),
+  //                                                    this->origin->getStates()));
+  //   this->buttons["settings"]->resetSate();
+  // }
 }
 
 void PauseMenu::render(sf::RenderTarget* target)

@@ -2,49 +2,35 @@
 
 //initializer
 
+void Game::initSettings()
+{
+
+  this->graphicsSettings.loadFromFile("config/config.ini");
+}
+
 void Game::initWindow()
 {
-  std::ifstream ifs("config/config.ini");
 
-  this->vm = sf::VideoMode::getFullscreenModes();
-
-  std::string   title = "none";
-  sf::VideoMode bounds = sf::VideoMode::getDesktopMode();
-  unsigned      framerateLimit = 120;
-  bool          vsync = false;
-  bool          fullscreen = false;
-  unsigned      antialiasingLvl = 0;
-
-  if (ifs.is_open())
+  if (this->graphicsSettings.fullscreen)
   {
-    std::getline(ifs, title);
-    ifs >> bounds.width >> bounds.height;
-    ifs >> framerateLimit;
-    ifs >> vsync;
-    ifs >> fullscreen;
-    ifs >> antialiasingLvl;
-  }
-
-  ifs.close();
-
-  this->contextSettings.antialiasingLevel = antialiasingLvl;
-  if (fullscreen)
-  {
-    this->renderWindow =
-      new sf::RenderWindow(bounds, title, sf::Style::Fullscreen, this->contextSettings);
+    this->renderWindow = new sf::RenderWindow(
+      this->graphicsSettings.resolution, this->graphicsSettings.title,
+      sf::Style::Fullscreen, this->graphicsSettings.context);
   }
   else
   {
-    this->renderWindow =
-      new sf::RenderWindow(bounds, title, sf::Style::Default, this->contextSettings);
+    this->renderWindow = new sf::RenderWindow(
+      this->graphicsSettings.resolution, this->graphicsSettings.title, sf::Style::Default,
+      this->graphicsSettings.context);
   }
 
-  this->renderWindow->setFramerateLimit(framerateLimit);
-  this->renderWindow->setVerticalSyncEnabled(vsync);
+  this->renderWindow->setFramerateLimit(this->graphicsSettings.frameRateLimit);
+  this->renderWindow->setVerticalSyncEnabled(this->graphicsSettings.vSync);
 }
 
 Game::Game()
 {
+  this->initSettings();
   this->initWindow();
   this->initKeys();
   this->initState();
@@ -143,8 +129,8 @@ void Game::initState()
 {
   //for (size_t i = 0; i < 10; i++)
   //{
-  this->states.push(
-    new MainMenuState(this->renderWindow, &this->supportedKeys, &this->states));
+  this->states.push(new MainMenuState(this->renderWindow, this->graphicsSettings,
+                                      &this->supportedKeys, &this->states));
   // this->states.push(new GameState(this->renderWindow,&this->supportedKeys));
 
   //}

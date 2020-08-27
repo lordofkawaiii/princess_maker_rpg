@@ -2,15 +2,14 @@
 
 #include "states/GameState.hpp"
 #include "states/MainMenuState.hpp"
+
 class Game
 {
 private:
   //variables
-  sf::RenderWindow*          renderWindow;
-  sf::Event                  event;
-  std::vector<sf::VideoMode> vm;
-  sf::ContextSettings        contextSettings;
-
+  sf::RenderWindow* renderWindow;
+  sf::Event         event;
+  Settings          graphicsSettings;
   //delta time
   sf::Clock dtClock;
   float     dt;
@@ -24,6 +23,7 @@ private:
   void initWindow();
   void initState();
   void initKeys();
+  void initSettings();
 
 public:
   Game();

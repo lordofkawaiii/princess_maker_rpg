@@ -5,6 +5,7 @@
 #include "SettingState.hpp"
 #include "StateWButtons.hpp"
 #include "UI/Button.hpp"
+#include "utilities/Settings.hpp"
 
 class MainMenuState : public StateWButtons
 {
@@ -15,10 +16,11 @@ private:
 protected:
   sf::Texture        bgTexture;
   sf::RectangleShape background;
+  Settings&          settings;
 
 public:
-  MainMenuState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys,
-                std::stack<State*>* states);
+  MainMenuState(sf::RenderWindow* window, Settings& settings,
+                std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
   ~MainMenuState();
   void update(float dt);
   void updateGeneralInput(float dt);

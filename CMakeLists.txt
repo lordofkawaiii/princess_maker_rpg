@@ -49,6 +49,8 @@ target_sources(
           src/utilities/Tile.cpp
           src/utilities/TileMap.hpp
           src/utilities/TileMap.cpp
+          src/utilities/Settings.hpp
+          src/utilities/Settings.cpp
           src/UI/PauseMenu.hpp
           src/UI/PauseMenu.cpp
           src/states/SettingState.hpp

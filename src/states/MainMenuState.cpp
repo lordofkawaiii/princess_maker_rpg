@@ -1,9 +1,9 @@
 #include "MainMenuState.hpp"
 
-MainMenuState::MainMenuState(sf::RenderWindow*           window,
+MainMenuState::MainMenuState(sf::RenderWindow* window, Settings& settings,
                              std::map<std::string, int>* supportedKeys,
                              std::stack<State*>*         states)
-  : StateWButtons(window, supportedKeys, states)
+  : StateWButtons(window, supportedKeys, states), settings(settings)
 {
   this->initKeyBinds();
   this->initFont();
@@ -72,8 +72,8 @@ void MainMenuState::update(float dt)
 
     if (this->buttons["settings"]->isPressed())
     {
-      this->states->push(
-        new SettingState(this->window, this->supportedKeys, this->states));
+      this->states->push(new SettingState(this->window, this->settings,
+                                          this->supportedKeys, this->states));
       this->buttons["settings"]->resetSate();
     }
 

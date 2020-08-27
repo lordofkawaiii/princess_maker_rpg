@@ -1,8 +1,8 @@
 #include "SettingState.hpp"
-SettingState::SettingState(sf::RenderWindow*           window,
+SettingState::SettingState(sf::RenderWindow* window, Settings settings,
                            std::map<std::string, int>* supportedKeys,
                            std::stack<State*>*         states)
-  : StateWButtons(window, supportedKeys, states)
+  : StateWButtons(window, supportedKeys, states), settings(settings)
 {
   this->initFont();
   init();
@@ -21,13 +21,13 @@ void SettingState::init()
          modeStr.at(k) != std::to_string(this->window->getSize().x) + "x" +
                             std::to_string(this->window->getSize().y);)
   {
-    std::cout << std::to_string(this->window->getSize().x) + "x" +
-                   std::to_string(this->window->getSize().y)
-              << std::endl;
-    std::cout << modeStr.at(k) << std::endl;
-    std::cout << sf::VideoMode::getDesktopMode().width << "x"
-              << sf::VideoMode::getDesktopMode().height << std::endl;
-    std::cout << "-----------------------------" << std::endl;
+    // std::cout << std::to_string(this->window->getSize().x) + "x" +
+    //                std::to_string(this->window->getSize().y)
+    //           << std::endl;
+    // std::cout << modeStr.at(k) << std::endl;
+    // std::cout << sf::VideoMode::getDesktopMode().width << "x"
+    //           << sf::VideoMode::getDesktopMode().height << std::endl;
+    // std::cout << "-----------------------------" << std::endl;
     k++;
   }
   this->addButton(
@@ -119,23 +119,25 @@ void SettingState::update(float dt)
     }
     if (this->buttons["apply"]->isPressed())
     {
-      this->window->create(
-        this->modes[this->dropDownLists["resolution"]->getActiveElementId()], "Test",
-        sf::Style::Default);
-      std::stack<State*> temp;
-      int                k = this->states->size();
-      for (size_t i = 0; i < k; i++)
-      {
-        State* tempSate = states->top();
-        tempSate->resizeAll();
-        temp.emplace(tempSate);
-        states->pop();
-      }
-      for (size_t i = 0; i < k; i++)
-      {
-        states->emplace(temp.top());
-        temp.pop();
-      }
+      this->settings.resolution =
+        this->modes[this->dropDownLists["resolution"]->getActiveElementId()];
+      this->window->create(this->settings.resolution, this->settings.title,
+                           sf::Style::Default);
+      this->settings.saveToFile("config/config.ini");
+      // std::stack<State*> temp;
+      // int                k = this->states->size();
+      // for (size_t i = 0; i < k; i++)
+      // {
+      //   State* tempSate = states->top();
+      //   tempSate->resizeAll();
+      //   temp.emplace(tempSate);
+      //   states->pop();
+      // }
+      // for (size_t i = 0; i < k; i++)
+      // {
+      //   states->emplace(temp.top());
+      //   temp.pop();
+      // }
     }
   }
 }

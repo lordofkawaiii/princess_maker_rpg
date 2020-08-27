@@ -24,12 +24,12 @@ std::vector<Button*> StateWPause::getButtons()
     {
       res.push_back(button);
     }
-    std::cout << "state is  paused" << std::endl;
+    // std::cout << "state is  paused" << std::endl;
     return res;
   }
   else
   {
-    std::cout << "state is not paused" << std::endl;
+    // std::cout << "state is not paused" << std::endl;
     return this->getButtons();
   }
 }
